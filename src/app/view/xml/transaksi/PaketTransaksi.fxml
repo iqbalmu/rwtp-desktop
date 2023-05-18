@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="560.0" prefWidth="700.0" style="-fx-background-color: #FFFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="29.0" layoutY="-13.0" text="Detail Transaksi Paket" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="20.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Separator layoutX="20.0" layoutY="60.0" prefWidth="660.0" AnchorPane.topAnchor="60.0" />
+      <Label layoutX="60.0" layoutY="112.0" prefHeight="30.0" text="Nama Lengkap" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="112.0" />
+      <Label layoutX="60.0" layoutY="172.0" prefHeight="30.0" text="Alamat" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="172.0" />
+      <Label layoutX="60.0" layoutY="232.0" prefHeight="30.0" text="Nomor Telepon" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="232.0" />
+      <Label layoutX="60.0" layoutY="340.0" prefHeight="30.0" text="Nama Lengkap" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="340.0" />
+      <Label layoutX="60.0" layoutY="400.0" prefHeight="30.0" text="Alamat" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="400.0" />
+      <Label layoutX="60.0" layoutY="460.0" prefHeight="30.0" text="Nomor Telepon" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="460.0" />
+      <TextField layoutX="195.0" layoutY="113.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="113.0" />
+      <TextField layoutX="205.0" layoutY="122.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="172.0" />
+      <TextField layoutX="195.0" layoutY="232.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="232.0" />
+      <TextField layoutX="205.0" layoutY="242.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="340.0" />
+      <TextField layoutX="205.0" layoutY="350.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="400.0" />
+      <TextField layoutX="195.0" layoutY="460.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="460.0" />
+      <Button layoutX="605.0" layoutY="515.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #3998F0; -fx-background-radius: 7;" text="Save" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label layoutX="45.0" layoutY="77.0" text="Pengirim" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="77.0">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="306.0" text="Penerima" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="306.0">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Label>
+      <Separator layoutX="20.0" layoutY="290.0" prefWidth="660.0" />
+   </children>
+</AnchorPane>

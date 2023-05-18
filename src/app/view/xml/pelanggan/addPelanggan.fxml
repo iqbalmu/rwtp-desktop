@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.pelanggan.AddPelangganController">
+   <children>
+      <Label layoutX="100.0" layoutY="25.0" text="Tambah Data Pelanggan">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNama" layoutX="129.0" layoutY="84.0" prefWidth="220.0" />
+      <TextField fx:id="txtTelp" layoutX="129.0" layoutY="125.0" prefWidth="220.0" />
+      <ComboBox fx:id="cbKategori" layoutX="129.0" layoutY="167.0" prefWidth="220.0" />
+      <TextField fx:id="txtAlamat" layoutX="129.0" layoutY="210.0" prefWidth="220.0" />
+      <Label layoutX="76.0" layoutY="88.0" text="Nama" />
+      <Label layoutX="76.0" layoutY="128.0" text="Telp" />
+      <Label layoutX="69.0" layoutY="171.0" text="Kategori" />
+      <Label layoutX="76.0" layoutY="214.0" text="Alamat" />
+      <Button fx:id="btnTambah" layoutX="160.0" layoutY="308.0" mnemonicParsing="false" onAction="#insertData" text="Tambah Data" />
+   </children>
+</AnchorPane>

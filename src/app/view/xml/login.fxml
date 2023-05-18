@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.LoginController">
+   <children>
+      <Pane fx:id="coverPane" prefHeight="540.0" prefWidth="965.0" stylesheets="@../css/login.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Pane fx:id="loginPane" layoutX="582.0" prefHeight="540.0" prefWidth="420.0" style="-fx-background-color: rgba(255, 255, 255, 0.9); -fx-background-radius: 15px 0 0 15px;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="720.0" prefWidth="420.0">
+               <children>
+                  <AnchorPane prefHeight="720.0" prefWidth="420.0">
+                     <Label layoutX="135.0" layoutY="188.0" prefHeight="40.0" prefWidth="216.0" text="Regina Wisata Transport" textFill="#4845d2" AnchorPane.bottomAnchor="492.0" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="69.0" AnchorPane.topAnchor="188.0">
+                        <font>
+                           <Font name="Garuda Bold" size="18.0" />
+                        </font>
+                     </Label>
+                     <TextField fx:id="usernameTxt" layoutX="67.0" layoutY="274.0" prefHeight="40.0" prefWidth="300.0" promptText="username" AnchorPane.bottomAnchor="406.0" AnchorPane.topAnchor="274.0" />
+                     <PasswordField fx:id="passwordTxt" layoutX="67.0" layoutY="337.0" prefHeight="40.0" prefWidth="300.0" promptText="password" AnchorPane.bottomAnchor="343.0" AnchorPane.topAnchor="337.0" />
+                     <Button fx:id="loginBtn" layoutX="67.0" layoutY="400.0" mnemonicParsing="false" onAction="#login" prefHeight="40.0" prefWidth="300.0" style="-fx-background-color: #007AFF;" text="LOGIN" textFill="WHITE" AnchorPane.bottomAnchor="280.0" AnchorPane.topAnchor="400.0">
+                        <font>
+                           <Font name="Garuda Bold" size="14.0" />
+                        </font>
+                        <cursor>
+                           <Cursor fx:constant="HAND" />
+                        </cursor></Button>
+                     <Label layoutX="83.0" layoutY="228.0" text="Aplikasi rental, sewa, dan paket berbasis desktop" AnchorPane.topAnchor="228.0">
+                        <font>
+                           <Font name="Garuda" size="12.0" />
+                        </font>
+                     </Label>
+                     <Label layoutX="84.0" layoutY="661.0" text="© Regina Wisata Transport 2023. All Right Reserved" AnchorPane.bottomAnchor="43.0">
+                        <font>
+                           <Font size="11.0" />
+                        </font>
+                     </Label>
+                     <Separator layoutX="83.0" layoutY="655.0" prefHeight="8.0" prefWidth="266.0" />
+                     <Label fx:id="wrongLogin" alignment="CENTER" contentDisplay="CENTER" layoutX="67.0" layoutY="127.0" prefHeight="18.0" prefWidth="300.0" textFill="#f53131" />
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
