@@ -47,7 +47,7 @@ public class SopirController {
 
     public void deleteData(ActionEvent actionEvent) {
         System.out.println("delete data");
-        selected = (Sopir) tableSopir.getSelectionModel().getSelectedItem();
+        selected = tableSopir.getSelectionModel().getSelectedItem();
         System.out.println(selected);
 
         SopirDAO sDao = new SopirDAO();
@@ -77,7 +77,7 @@ public class SopirController {
 
     public void editData(ActionEvent actionEvent) throws IOException {
         System.out.println("edit data");
-        selected = (Sopir) tableSopir.getSelectionModel().getSelectedItem();
+        selected = tableSopir.getSelectionModel().getSelectedItem();
         Stage stage = new Stage();
 
         if (selected != null) {

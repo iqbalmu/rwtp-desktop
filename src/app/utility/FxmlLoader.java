@@ -21,5 +21,5 @@ public class FxmlLoader {
         }
 
         return view;
-    };
+    }
 }

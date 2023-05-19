@@ -1,104 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.InnerShadow?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane fx:id="contentBPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.MainController">
-    <left>
-<!--        <VBox prefHeight="463.0" prefWidth="120.0" style="-fx-background-color: #97baef;" BorderPane.alignment="CENTER">-->
-            <AnchorPane prefHeight="650.0" prefWidth="200.0" style="-fx-background-color: #D9D9D9;">
-            <children>
-                  <Button fx:id="dashboardBtn" layoutY="22.0" mnemonicParsing="false" onAction="#dashboardHandler" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="Dashboard" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <InnerShadow />
-               </effect></Button>
-                  <Button fx:id="transaksiBtn" layoutY="82.0" mnemonicParsing="false" onAction="#transaksiHandler" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="Transaksi">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <InnerShadow />
-               </effect></Button>
-                  <Button fx:id="pelangganBtn" layoutY="142.0" mnemonicParsing="false" onAction="#pelangganHandler" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="Pelanggan" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <InnerShadow />
-               </effect></Button>
-                  <Button fx:id="sopirBtn" layoutY="202.0" mnemonicParsing="false" onAction="#sopirHandler" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="Sopir" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <InnerShadow />
-               </effect></Button>
-                  <Button fx:id="mobilBtn" layoutY="262.0" mnemonicParsing="false" onAction="#mobilHandler" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="Mobil" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <InnerShadow />
-               </effect></Button>
-                  <Button fx:id="pengembalianBtn" layoutY="322.0" mnemonicParsing="false" onAction="#pengembalianHandler" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="Pengembalian" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <InnerShadow />
-               </effect></Button>
-                  <Button fx:id="logoutBtn" layoutX="29.0" layoutY="403.0" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="140.0" style="-fx-background-radius: 10; -fx-background-color: white;" text="log out" AnchorPane.bottomAnchor="34.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" />
-                  <Label fx:id="userLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="508.0" prefHeight="30.0" prefWidth="100.0" text="user" AnchorPane.bottomAnchor="82.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-            </children>
-            </AnchorPane>
-<!--        </VBox>-->
-    </left>
-   <center>
-        <AnchorPane fx:id="contentPane" prefHeight="650.0" style="-fx-background-color: #ffff;" BorderPane.alignment="CENTER">
-        </AnchorPane>
-   </center>
-   <top>
-      <AnchorPane prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #7ECDF0;" BorderPane.alignment="CENTER">
+<GridPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="app.controller.MainController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" prefWidth="1080.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="650.0" prefWidth="200.0" style="-fx-background-color: #007AFF;">
          <children>
-            <Label layoutX="73.0" layoutY="9.0" text="RWT" textFill="WHITE">
+            <Button fx:id="dashboardBtn" layoutY="109.0" mnemonicParsing="false" onAction="#dashboardHandler" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="Dashboard" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <font>
-                  <Font name="Garuda Bold" size="30.0" />
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </Button>
+            <Button fx:id="transaksiBtn" layoutY="169.0" mnemonicParsing="false" onAction="#transaksiHandler" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="Transaksi" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </Button>
+            <Button fx:id="pelangganBtn" layoutY="229.0" mnemonicParsing="false" onAction="#pelangganHandler" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="Pelanggan" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </Button>
+            <Button fx:id="sopirBtn" layoutY="289.0" mnemonicParsing="false" onAction="#sopirHandler" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="Sopir" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </Button>
+            <Button fx:id="mobilBtn" layoutY="349.0" mnemonicParsing="false" onAction="#mobilHandler" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="Mobil" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </Button>
+            <Button fx:id="laporanBtn" layoutY="409.0" mnemonicParsing="false" onAction="#laporanHandler" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="Laporan" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <InnerShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </InnerShadow>
+               </effect>
+            </Button>
+            <Button fx:id="logoutBtn" layoutX="29.0" layoutY="403.0" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="140.0" style="-fx-background-radius: 10; -fx-background-color: white;" text="Log Out" textFill="#007aff" AnchorPane.bottomAnchor="34.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Label fx:id="userLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="508.0" prefHeight="30.0" prefWidth="100.0" text="user" textFill="WHITE" AnchorPane.bottomAnchor="82.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <Label layoutX="71.0" layoutY="40.0" text="RWT" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="26.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-   </top>
-   <right>
-      <Pane maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" scaleX="0.0" scaleY="0.0" scaleZ="0.0" BorderPane.alignment="CENTER" />
-   </right>
-   <bottom>
-      <Pane maxHeight="0.0" prefHeight="0.0" prefWidth="1280.0" BorderPane.alignment="CENTER" />
-   </bottom>
-</BorderPane>
+      <AnchorPane prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #ffff;" GridPane.columnIndex="1">
+         <children>
+            <AnchorPane fx:id="contentPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children></AnchorPane>
+   </children>
+</GridPane>

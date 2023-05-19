@@ -39,7 +39,7 @@ public class LoginController {
                 ResultSet rs = ps.executeQuery();
 
                 if (rs.next()) {
-                    m.changeScene("view/xml/main2.fxml");
+                    m.changeScene("view/xml/main.fxml");
                     UserInfo.username = usernameTxt.getText();
                 } else {
                     wrongLogin.setText("Data login tidak sesuai!!");

@@ -45,7 +45,7 @@ public class PelangganController {
     public void deleteData(ActionEvent actionEvent) {
         System.out.println("delete data");
         Pelanggan selected;
-        selected = (Pelanggan) tablePelanggan.getSelectionModel().getSelectedItem();
+        selected = tablePelanggan.getSelectionModel().getSelectedItem();
         System.out.println(selected);
 
         PelangganDAO pDao = new PelangganDAO();
@@ -75,7 +75,7 @@ public class PelangganController {
 
     public void editData(ActionEvent actionEvent) throws IOException {
         System.out.println("edit data");
-        Pelanggan selected = (Pelanggan) tablePelanggan.getSelectionModel().getSelectedItem();
+        Pelanggan selected = tablePelanggan.getSelectionModel().getSelectedItem();
         Stage stage = new Stage();
         if (selected != null) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/xml/pelanggan/editPelanggan.fxml"));

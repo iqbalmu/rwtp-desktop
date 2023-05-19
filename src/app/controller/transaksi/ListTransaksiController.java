@@ -15,6 +15,6 @@ public class ListTransaksiController {
     public void handlerAddTransaksi(ActionEvent actionEvent) throws IOException {
         home = FXMLLoader.load(getClass().getResource("/xml/transaksi/Transaksi.fxml"));
         contentPane.getChildren().clear();
-        contentPane.getChildren().add((Node) home);
+        contentPane.getChildren().add(home);
     }
 }

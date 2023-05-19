@@ -27,7 +27,7 @@ public class MainController {
 
     public void setNode(Node node){
         contentPane.getChildren().clear();
-        contentPane.getChildren().add((Node) node);
+        contentPane.getChildren().add(node);
     }
 
     public void initialize(){

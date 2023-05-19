@@ -14,5 +14,5 @@ public class ChangeScene {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-    };
+    }
 }

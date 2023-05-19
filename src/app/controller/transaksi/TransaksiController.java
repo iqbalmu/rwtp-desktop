@@ -26,7 +26,7 @@ public class TransaksiController implements Initializable {
         try{
             home = FXMLLoader.load(getClass().getResource("/xml/transaksi/ListTransaksi.fxml"));
             contentPane.getChildren().clear();
-            contentPane.getChildren().add((Node) home);
+            contentPane.getChildren().add(home);
         }catch (IOException ex){
             ex.printStackTrace();
         }
@@ -37,7 +37,7 @@ public class TransaksiController implements Initializable {
         try {
             transaksiPane = FXMLLoader.load(getClass().getResource("/xml/transaksi/PaketTransaksi.fxml"));
             content.getChildren().clear();
-            content.getChildren().add((Node) transaksiPane);
+            content.getChildren().add(transaksiPane);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -47,7 +47,7 @@ public class TransaksiController implements Initializable {
         try {
             transaksiPane = FXMLLoader.load(getClass().getResource("/xml/transaksi/RentalTransaksi.fxml"));
             content.getChildren().clear();
-            content.getChildren().add((Node) transaksiPane);
+            content.getChildren().add(transaksiPane);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -61,7 +61,7 @@ public class TransaksiController implements Initializable {
         try{
             transaksiPane = FXMLLoader.load(getClass().getResource("/xml/transaksi/SewaTransaksi.fxml"));
             content.getChildren().clear();
-            content.getChildren().add((Node) transaksiPane);
+            content.getChildren().add(transaksiPane);
         }catch (IOException ex) {
             ex.printStackTrace();
         }
