@@ -2,6 +2,7 @@ package app.controller.mobil;
 
 import app.dao.SopirDAO;
 import app.model.Sopir;
+import app.utility.SelectDb;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -31,7 +32,7 @@ public class AddMobilController implements Initializable {
         ObservableList<String> lJenis = FXCollections.observableArrayList("Inova", "Reborn", "Fortuner");
         ObservableList<String> lKelas = FXCollections.observableArrayList("Ekonomi", "Eksekutif");
         ObservableList<String> lStatus = FXCollections.observableArrayList("Ready", "Drive", "Maintanance");
-        ObservableList<String> lSopir = FXCollections.observableArrayList("Sopir 1", "Sopir 2", "Sopir 3");
+        ObservableList<String> lSopir = SelectDb.where("sopir", "nama_sopir");
 
         cbJenis.setItems(lJenis);
         cbKelas.setItems(lKelas);

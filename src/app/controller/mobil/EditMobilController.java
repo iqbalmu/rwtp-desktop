@@ -1,6 +1,8 @@
 package app.controller.mobil;
 
+import app.dao.MobilDAO;
 import app.utility.JDBCConnection;
+import app.utility.SelectDb;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -25,27 +27,12 @@ public class EditMobilController implements Initializable {
         ObservableList<String> lJenis = FXCollections.observableArrayList("Inova", "Reborn", "Fortuner");
         ObservableList<String> lKelas = FXCollections.observableArrayList("Ekonomi", "Eksekutif");
         ObservableList<String> lStatus = FXCollections.observableArrayList("Ready", "Drive", "Maintanance");
+        ObservableList<String> lSopir = SelectDb.where("sopir", "nama_sopir");
 
         cbJenis.setItems(lJenis);
         cbKelas.setItems(lKelas);
         cbStatus.setItems(lStatus);
-
-        getDbSopirOption();
-    }
-
-    public void getDbSopirOption(){
-        ObservableList<String> option = FXCollections.observableArrayList();
-        try{
-            PreparedStatement ps = JDBCConnection.getConnection().prepareStatement("select nama_sopir from sopir");
-            ResultSet res = ps.executeQuery();
-            while (res.next()) {
-                option.add(res.getString("nama_sopir"));
-            }
-            cbSopir.setItems(option);
-        }catch (SQLException ex) {
-            System.out.println("getDbSopir");
-            System.out.println(ex.getMessage());
-        }
+        cbSopir.setItems(lSopir);
     }
 
     public void updateDataMobil(ActionEvent actionEvent) {

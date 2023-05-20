@@ -88,4 +88,19 @@ public class MobilDAO implements daoInterface<Mobil>{
 
         return mList;
     }
+
+//    public ObservableList<String> selectDataDb(String table, String field) {
+//        ObservableList<String> data = FXCollections.observableArrayList();
+//        try {
+//            String query = "SELECT " + field + " FROM " + table;
+//            PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
+//            ResultSet res = ps.executeQuery();
+//            while (res.next()) {
+//                data.add(res.getString(field));
+//            }
+//        }catch (SQLException ex){
+//            System.out.println(ex.getMessage());
+//        }
+//        return data;
+//    }
 }

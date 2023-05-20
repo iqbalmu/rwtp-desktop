@@ -13,7 +13,7 @@ public class JDBCConnection {
             conn = DriverManager.getConnection(
                     "jdbc:mysql://localhost/db_rwt",
                     "root",
-                    "123"
+                    ""
             );
         }catch (ClassNotFoundException | SQLException ext) {
             System.out.println(ext.getMessage());
