@@ -1,5 +1,6 @@
 package app.dao;
 
+import app.model.Mobil;
 import app.model.Sopir;
 import app.utility.JDBCConnection;
 import javafx.collections.FXCollections;
@@ -98,5 +99,6 @@ public class SopirDAO implements daoInterface<Sopir> {
 
         return sList;
     }
+
 }
 

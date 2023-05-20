@@ -22,13 +22,6 @@ public class SopirController {
     public TableColumn<Sopir, String> address;
     public TableColumn<Sopir, String> ktp;
     public TableColumn<Sopir, String> sim;
-    public TextField txtName;
-    public TextField txtAlamat;
-    public TextField txtPhone;
-    public TextField txtSim;
-    public TextField txtKtp;
-    public Button btnSimpan;
-
 
     public void initialize() {
         id.setCellValueFactory(new PropertyValueFactory<Sopir, Integer>("id_sopir"));

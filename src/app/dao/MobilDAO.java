@@ -72,15 +72,17 @@ public class MobilDAO implements daoInterface<Mobil>{
             PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
             ResultSet res = ps.executeQuery();
 
-            int id = res.getInt("id_mobil");
-            String nopol = res.getString("nopol");
-            String jenis = res.getString("jenis_mobil");
-            String kelas = res.getString("kelas");
-            String status = res.getString("status");
-            int id_sopir = res.getInt("id_sopir");
+            while (res.next()){
+                int id = res.getInt("id_mobil");
+                String nopol = res.getString("nopol");
+                String jenis = res.getString("jenis_mobil");
+                String kelas = res.getString("kelas");
+                String status = res.getString("status");
+                int id_sopir = res.getInt("id_sopir");
 
-            Mobil m = new Mobil(id, nopol, jenis, kelas, status, id_sopir);
-            mList.add(m);
+                Mobil m = new Mobil(id, nopol, jenis, kelas, status, id_sopir);
+                mList.add(m);
+            }
 
         }catch (SQLException ex){
             System.out.println(ex.getMessage());
@@ -88,19 +90,4 @@ public class MobilDAO implements daoInterface<Mobil>{
 
         return mList;
     }
-
-//    public ObservableList<String> selectDataDb(String table, String field) {
-//        ObservableList<String> data = FXCollections.observableArrayList();
-//        try {
-//            String query = "SELECT " + field + " FROM " + table;
-//            PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
-//            ResultSet res = ps.executeQuery();
-//            while (res.next()) {
-//                data.add(res.getString(field));
-//            }
-//        }catch (SQLException ex){
-//            System.out.println(ex.getMessage());
-//        }
-//        return data;
-//    }
 }

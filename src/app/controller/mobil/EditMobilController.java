@@ -1,6 +1,8 @@
 package app.controller.mobil;
 
 import app.dao.MobilDAO;
+import app.dao.SopirDAO;
+import app.model.Sopir;
 import app.utility.JDBCConnection;
 import app.utility.SelectDb;
 import javafx.collections.FXCollections;
@@ -22,20 +24,39 @@ public class EditMobilController implements Initializable {
     public ComboBox cbKelas;
     public ComboBox cbSopir;
     public ComboBox cbStatus;
+    public int id;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ObservableList<String> lJenis = FXCollections.observableArrayList("Inova", "Reborn", "Fortuner");
         ObservableList<String> lKelas = FXCollections.observableArrayList("Ekonomi", "Eksekutif");
         ObservableList<String> lStatus = FXCollections.observableArrayList("Ready", "Drive", "Maintanance");
-        ObservableList<String> lSopir = SelectDb.where("sopir", "nama_sopir");
 
         cbJenis.setItems(lJenis);
         cbKelas.setItems(lKelas);
         cbStatus.setItems(lStatus);
-        cbSopir.setItems(lSopir);
+        cbSopir.setItems(getDataSopir());
     }
 
     public void updateDataMobil(ActionEvent actionEvent) {
 
     }
+
+    public ObservableList<Sopir> getDataSopir() {
+        ObservableList<Sopir> data;
+        SopirDAO sopirDAO = new SopirDAO();
+        data = sopirDAO.showData();
+
+        return data;
+    }
+
+//    public void setField(int id, String nopol, String jenis, String kelas, String status, String sopir) {
+//        this.id = id;
+//        this.txtNopol.setText(nopol);
+//        this.cbJenis.setValue(kelas);
+//        this.cbKelas.setValue(kelas);
+//        this.cbStatus.setValue(status);
+//        this.cbSopir.setValue(sopir);
+//    }
+
+//    public
 }

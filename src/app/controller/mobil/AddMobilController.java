@@ -1,18 +1,27 @@
 package app.controller.mobil;
 
+import app.dao.MobilDAO;
 import app.dao.SopirDAO;
+import app.model.Mobil;
 import app.model.Sopir;
+import app.utility.JDBCConnection;
 import app.utility.SelectDb;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.ObservableMap;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AddMobilController implements Initializable {
@@ -24,7 +33,18 @@ public class AddMobilController implements Initializable {
     public ComboBox cbStatus;
 
     public void insertDataMobil(ActionEvent actionEvent) {
+        String nopol = txtNopol.getText();
+        String jenis = cbJenis.getSelectionModel().getSelectedItem().toString();
+        String kelas = cbKelas.getSelectionModel().getSelectedItem().toString();
+        Sopir sopir = (Sopir) cbSopir.getSelectionModel().getSelectedItem();
+        String status = cbStatus.getSelectionModel().getSelectedItem().toString();
 
+        MobilDAO mobilDAO = new MobilDAO();
+        mobilDAO.addData(new Mobil(nopol,jenis,kelas,status, sopir.getId_sopir()));
+//
+        Node n = (Node) actionEvent.getSource();
+        Stage stage = (Stage) n.getScene().getWindow();
+        stage.close();
     }
 
     @Override
@@ -32,13 +52,20 @@ public class AddMobilController implements Initializable {
         ObservableList<String> lJenis = FXCollections.observableArrayList("Inova", "Reborn", "Fortuner");
         ObservableList<String> lKelas = FXCollections.observableArrayList("Ekonomi", "Eksekutif");
         ObservableList<String> lStatus = FXCollections.observableArrayList("Ready", "Drive", "Maintanance");
-        ObservableList<String> lSopir = SelectDb.where("sopir", "nama_sopir");
 
         cbJenis.setItems(lJenis);
         cbKelas.setItems(lKelas);
         cbStatus.setItems(lStatus);
-        cbSopir.setItems(lSopir);
+        cbSopir.setItems(getDataSopir());
+
     }
 
+    public ObservableList<Sopir> getDataSopir() {
+        ObservableList<Sopir> data;
+        SopirDAO sopirDAO = new SopirDAO();
+        data = sopirDAO.showData();
+
+        return data;
+    }
 
 }

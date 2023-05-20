@@ -9,6 +9,14 @@ public class Mobil {
     private String status;
     private int id_sopir;
 
+    public Mobil(String nopol, String jenis, String kelas, String status, int id_sopir) {
+        this.nopol = nopol;
+        this.jenis = jenis;
+        this.kelas = kelas;
+        this.status = status;
+        this.id_sopir = id_sopir;
+    }
+
     public Mobil(int id, String nopol, String jenis, String kelas, String status, int id_sopir) {
         this.id = id;
         this.nopol = nopol;

@@ -8,7 +8,9 @@ public class Sopir {
     private String ktp;
     private String sim;
 
-    public Sopir() {
+    public Sopir(int id_sopir, String nama) {
+        this.id_sopir = id_sopir;
+        this.nama = nama;
     }
 
     public Sopir(int id_sopir, String nama, String phone, String alamat, String ktp, String sim) {
@@ -30,10 +32,7 @@ public class Sopir {
 
     @Override
     public String toString() {
-        return "Sopir{" +
-                "id_sopir='" + id_sopir + '\'' +
-                ", nama='" + nama + '\'' +
-                '}';
+        return this.getNama();
     }
 
     public int getId_sopir() {
