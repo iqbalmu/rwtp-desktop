@@ -19,7 +19,7 @@ import java.io.IOException;
 public class PelangganController {
     public Button delBtn;
     public Button editBtn;
-    public Button addBtn;
+//    public Button addBtn;
 
     public TableView<Pelanggan> tablePelanggan;
     public TableColumn<Pelanggan, Integer> id;
@@ -58,20 +58,20 @@ public class PelangganController {
         tablePelanggan.setItems(pList);
     }
 
-    public void addData(ActionEvent actionEvent) throws IOException {
-        System.out.println("add data");
-        Stage stage = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/xml/pelanggan/addPelanggan.fxml"));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
+//    public void addData(ActionEvent actionEvent) throws IOException {
+//        System.out.println("add data");
+//        Stage stage = new Stage();
+//        FXMLLoader loader = new FXMLLoader(getClass().getResource("/xml/pelanggan/addPelanggan.fxml"));
+//        Parent root = loader.load();
+//        Scene scene = new Scene(root);
+//
+//        stage.setTitle("Tambah Data Pelanggan");
+//        stage.setScene(scene);
+//        stage.showAndWait();
 
-        AddPelangganController apc = loader.getController();
-        stage.setTitle("Tambah Data Pelanggan");
-        stage.setScene(scene);
-        stage.showAndWait();
-
-        tablePelanggan.setItems(apc.getpList());
-    }
+//        AddPelangganController apc = loader.getController();
+//        tablePelanggan.setItems(apc.getpList());
+//    }
 
     public void editData(ActionEvent actionEvent) throws IOException {
         System.out.println("edit data");
