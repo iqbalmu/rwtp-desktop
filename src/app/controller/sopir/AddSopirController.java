@@ -2,19 +2,26 @@ package app.controller.sopir;
 
 import app.dao.SopirDAO;
 import app.model.Sopir;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class AddSopirController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class AddSopirController implements Initializable {
 
     public TextField txtName;
     public TextField txtAlamat;
     public TextField txtPhone;
     public TextField txtSim;
     public TextField txtKtp;
+    public ComboBox<String> cbStatus;
 
     private ObservableList<Sopir> sList;
 
@@ -28,12 +35,13 @@ public class AddSopirController {
         String address = txtAlamat.getText();
         String ktp = txtKtp.getText();
         String sim = txtSim.getText();
+        String status = cbStatus.getSelectionModel().getSelectedItem().toString();
 
-        if(name.isEmpty() || phone.isEmpty() || address.isEmpty() || ktp.isEmpty() || sim.isEmpty()){
+        if(name.isEmpty() || phone.isEmpty() || address.isEmpty() || ktp.isEmpty() || sim.isEmpty() || status.isEmpty()){
             System.out.println("field kosong");
         }else{
             SopirDAO dao = new SopirDAO();
-            dao.addData(new Sopir(name,phone,address,ktp,sim));
+            dao.addData(new Sopir(name,phone,address,ktp,sim, status));
             sList = dao.showData();
         }
 
@@ -41,5 +49,11 @@ public class AddSopirController {
         Stage stage = (Stage) n.getScene().getWindow();
         stage.close();
 
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        ObservableList<String> statuses = FXCollections.observableArrayList("Utama", "Cadangan");
+        cbStatus.setItems(statuses);
     }
 }

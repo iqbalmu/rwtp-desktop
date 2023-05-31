@@ -11,9 +11,9 @@ public class JDBCConnection {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost/db_rwt",
+                    "jdbc:mysql://localhost/db_rwt_3",
                     "root",
-                    ""
+                    "123"
             );
         }catch (ClassNotFoundException | SQLException ext) {
             System.out.println(ext.getMessage());

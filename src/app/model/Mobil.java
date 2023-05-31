@@ -76,9 +76,6 @@ public class Mobil {
 
     @Override
     public String toString() {
-        return "Mobil{" +
-                "nopol='" + nopol + '\'' +
-                ", status='" + status + '\'' +
-                '}';
+        return getNopol();
     }
 }

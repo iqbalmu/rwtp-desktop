@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -46,9 +47,17 @@ public class MobilController implements Initializable {
 
 
     public void deleteData(ActionEvent actionEvent) {
-        MobilDAO mobilDAO = new MobilDAO();
-        System.out.println(mobilDAO.showData());
+        System.out.println("Delete Data");
+        selected = tableMobil.getSelectionModel().getSelectedItem();
 
+        MobilDAO mobilDAO = new MobilDAO();
+        int result = mobilDAO.delData(selected);
+        if (result !=0 ){
+            System.out.println("Delete Succes");
+        }
+
+        ObservableList<Mobil> mobils = mobilDAO.showData();
+        tableMobil.setItems(mobils);
     }
 
     public void editData(ActionEvent actionEvent) throws IOException {
@@ -62,13 +71,21 @@ public class MobilController implements Initializable {
             Scene scene = new Scene(root);
 
             EditMobilController emc = loader.getController();
-            emc.setField(selected.getId(),selected.getNopol(),selected.getKelas(),selected.getStatus(),selected.getId_sopir());
+            emc.setField(selected.getId(),selected.getNopol(),selected.getJenis(),selected.getKelas(),selected.getStatus(),selected.getId_sopir());
 
             stage.setTitle("Edit Data Mobil");
             stage.setScene(scene);
             stage.showAndWait();
-        }else{
 
+            tableMobil.setItems(emc.getList());
+        }else{
+            stage.setTitle("Edit Data Sopir");
+            Label label = new Label();
+            label.setText("Data Edit Belum dipilih");
+
+            Scene scene = new Scene(label);
+            stage.setScene(scene);
+            stage.show();
         }
 
     }
@@ -82,6 +99,9 @@ public class MobilController implements Initializable {
         stage.setTitle("Tambah Data Mobil");
         stage.setScene(scene);
         stage.showAndWait();
+
+        AddMobilController amc = loader.getController();
+        tableMobil.setItems(amc.getListMobil());
     }
 
 

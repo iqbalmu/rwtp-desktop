@@ -45,7 +45,7 @@ public class TransaksiController implements Initializable {
 
     public void handlerRentalMenu(ActionEvent actionEvent){
         try {
-            transaksiPane = FXMLLoader.load(getClass().getResource("/xml/transaksi/RentalTransaksi.fxml"));
+            transaksiPane = FXMLLoader.load(getClass().getResource("/xml/transaksi/RentalTransaksi2.fxml"));
             content.getChildren().clear();
             content.getChildren().add(transaksiPane);
         } catch (IOException ex) {
@@ -59,7 +59,7 @@ public class TransaksiController implements Initializable {
 
     public void defaultMenu(){
         try{
-            transaksiPane = FXMLLoader.load(getClass().getResource("/xml/transaksi/SewaTransaksi.fxml"));
+            transaksiPane = FXMLLoader.load(getClass().getResource("/xml/transaksi/SewaTransaksi2.fxml"));
             content.getChildren().clear();
             content.getChildren().add(transaksiPane);
         }catch (IOException ex) {

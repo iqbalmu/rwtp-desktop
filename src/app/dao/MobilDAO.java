@@ -90,4 +90,31 @@ public class MobilDAO implements daoInterface<Mobil>{
 
         return mList;
     }
+
+    public ObservableList<Mobil> getMobilAvailable(String kelas) {
+        ObservableList<Mobil> data = FXCollections.observableArrayList();
+
+        try{
+            String query = "SELECT * FROM  mobil WHERE LOWER(kelas)=? AND LOWER(status)='ready' ";
+            PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
+            ps.setString(1, kelas);
+            ResultSet res = ps.executeQuery();
+
+            while (res.next()){
+                int id = res.getInt("id_mobil");
+                String nopol = res.getString("nopol");
+                String jenis = res.getString("jenis_mobil");
+                String mkelas = res.getString("kelas");
+                String status = res.getString("status");
+                int id_sopir = res.getInt("id_sopir");
+
+                Mobil m = new Mobil(id, nopol, jenis, kelas, status, id_sopir);
+                data.add(m);
+            }
+
+        }catch (SQLException ex){
+            System.out.println(ex.getMessage());
+        }
+        return data;
+    }
 }

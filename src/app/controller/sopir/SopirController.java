@@ -22,6 +22,7 @@ public class SopirController {
     public TableColumn<Sopir, String> address;
     public TableColumn<Sopir, String> ktp;
     public TableColumn<Sopir, String> sim;
+    public TableColumn<Sopir, String> status;
 
     public void initialize() {
         id.setCellValueFactory(new PropertyValueFactory<Sopir, Integer>("id_sopir"));
@@ -30,6 +31,7 @@ public class SopirController {
         address.setCellValueFactory(new PropertyValueFactory<Sopir, String>("alamat"));
         ktp.setCellValueFactory(new PropertyValueFactory<Sopir, String>("ktp"));
         sim.setCellValueFactory(new PropertyValueFactory<Sopir, String>("sim"));
+        status.setCellValueFactory(new PropertyValueFactory<Sopir, String>("Status"));
 
         SopirDAO sDAO = new SopirDAO();
         ObservableList<Sopir> sList = sDAO.showData();
@@ -78,7 +80,7 @@ public class SopirController {
             Parent root = loader.load();
             Scene scene = new Scene(root);
             EditSopirController esc = loader.getController();
-            esc.setField(selected.getId_sopir(), selected.getNama(), selected.getAlamat(), selected.getPhone(), selected.getSim(), selected.getKtp());
+            esc.setField(selected.getId_sopir(), selected.getNama(), selected.getAlamat(), selected.getPhone(), selected.getSim(), selected.getKtp(), selected.getStatus());
 
             stage.setTitle("Edit Data Sopir");
             stage.setScene(scene);

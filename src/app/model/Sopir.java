@@ -7,27 +7,34 @@ public class Sopir {
     private String alamat;
     private String ktp;
     private String sim;
+    private String status;
 
     public Sopir(int id_sopir, String nama) {
         this.id_sopir = id_sopir;
         this.nama = nama;
     }
 
-    public Sopir(int id_sopir, String nama, String phone, String alamat, String ktp, String sim) {
+    public Sopir(int id_sopir, String nama, String phone, String alamat, String ktp, String sim, String status) {
         this.id_sopir = id_sopir;
         this.nama = nama;
         this.phone = phone;
         this.alamat = alamat;
         this.ktp = ktp;
         this.sim = sim;
+        this.status = status;
     }
 
-    public Sopir( String nama, String phone, String alamat, String ktp, String sim) {
+    public Sopir(String nama, String phone, String alamat, String ktp, String sim, String status) {
         this.nama = nama;
         this.phone = phone;
         this.alamat = alamat;
         this.ktp = ktp;
         this.sim = sim;
+        this.status = status;
+    }
+
+    public Sopir() {
+
     }
 
     @Override
@@ -81,5 +88,13 @@ public class Sopir {
 
     public void setSim(String sim) {
         this.sim = sim;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

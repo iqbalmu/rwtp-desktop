@@ -32,6 +32,12 @@ public class AddMobilController implements Initializable {
     public ComboBox cbSopir;
     public ComboBox cbStatus;
 
+    private ObservableList<Mobil> listMobil;
+
+    public ObservableList<Mobil> getListMobil() {
+        return listMobil;
+    }
+
     public void insertDataMobil(ActionEvent actionEvent) {
         String nopol = txtNopol.getText();
         String jenis = cbJenis.getSelectionModel().getSelectedItem().toString();
@@ -41,7 +47,8 @@ public class AddMobilController implements Initializable {
 
         MobilDAO mobilDAO = new MobilDAO();
         mobilDAO.addData(new Mobil(nopol,jenis,kelas,status, sopir.getId_sopir()));
-//
+        listMobil = mobilDAO.showData();
+
         Node n = (Node) actionEvent.getSource();
         Stage stage = (Stage) n.getScene().getWindow();
         stage.close();
@@ -49,9 +56,9 @@ public class AddMobilController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<String> lJenis = FXCollections.observableArrayList("Inova", "Reborn", "Fortuner");
+        ObservableList<String> lJenis = FXCollections.observableArrayList("Inova", "Reborn", "Panther");
         ObservableList<String> lKelas = FXCollections.observableArrayList("Ekonomi", "Eksekutif");
-        ObservableList<String> lStatus = FXCollections.observableArrayList("Ready", "Drive", "Maintanance");
+        ObservableList<String> lStatus = FXCollections.observableArrayList("Ready", "Maintanance");
 
         cbJenis.setItems(lJenis);
         cbKelas.setItems(lKelas);
@@ -63,7 +70,7 @@ public class AddMobilController implements Initializable {
     public ObservableList<Sopir> getDataSopir() {
         ObservableList<Sopir> data;
         SopirDAO sopirDAO = new SopirDAO();
-        data = sopirDAO.showData();
+        data = sopirDAO.getSopirAvailable();
 
         return data;
     }

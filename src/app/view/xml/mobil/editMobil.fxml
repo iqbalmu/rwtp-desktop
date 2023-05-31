@@ -24,6 +24,6 @@
       <ComboBox fx:id="cbKelas" layoutX="129.0" layoutY="167.0" prefWidth="220.0" />
       <ComboBox fx:id="cbSopir" layoutX="129.0" layoutY="210.0" prefWidth="220.0" />
       <ComboBox fx:id="cbStatus" layoutX="129.0" layoutY="248.0" prefWidth="220.0" />
-      <Button fx:id="btnEdit" layoutX="160.0" layoutY="308.0" mnemonicParsing="false" onAction="#updateDataMobil" text="Tambah Data" />
+      <Button fx:id="btnEdit" layoutX="160.0" layoutY="308.0" mnemonicParsing="false" onAction="#updateDataMobil" text="Simpan" />
    </children>
 </AnchorPane>

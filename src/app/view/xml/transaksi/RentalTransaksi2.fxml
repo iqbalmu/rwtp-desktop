@@ -18,21 +18,23 @@
       <Separator layoutX="20.0" layoutY="60.0" prefWidth="660.0" AnchorPane.topAnchor="60.0" />
       <Label layoutX="45.0" layoutY="106.0" prefHeight="30.0" text="Nama Lengkap" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="106.0" />
       <Label layoutX="45.0" layoutY="166.0" prefHeight="30.0" text="Identitas" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="166.0" />
-      <Label layoutX="45.0" layoutY="226.0" prefHeight="30.0" text="Tujuan" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="226.0" />
+      <Label layoutX="45.0" layoutY="226.0" prefHeight="30.0" text="Alamat" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="226.0" />
       <Label layoutX="45.0" layoutY="286.0" prefHeight="30.0" text="Lama Rental" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="286.0" />
       <Label layoutX="45.0" layoutY="346.0" prefHeight="30.0" text="Class" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="346.0" />
-      <Label layoutX="45.0" layoutY="406.0" prefHeight="30.0" text="Nomor Telepon" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="406.0" />
+      <Label layoutX="45.0" layoutY="406.0" prefHeight="30.0" text="Nomor Telepon" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="466.0" />
       <Label layoutX="605.0" layoutY="286.0" prefHeight="30.0" text="Deskripsi Class" AnchorPane.topAnchor="346.0">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
       </Label>
+      <Label layoutX="45.0" layoutY="401.0" prefHeight="30.0" text="Mobil" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="406.0" />
       <TextField layoutX="195.0" layoutY="106.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="106.0" />
       <ComboBox fx:id="cbIdentitas" layoutX="195.0" layoutY="166.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="166.0" />
-      <TextField layoutX="195.0" layoutY="226.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="226.0" />
+      <TextField fx:id="alamat" layoutX="195.0" layoutY="226.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="226.0" />
       <ComboBox fx:id="cbLRental" layoutX="195.0" layoutY="286.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="286.0" />
-      <ComboBox fx:id="cbClass" layoutX="195.0" layoutY="346.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="346.0" />
-      <TextField layoutX="195.0" layoutY="406.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="406.0" />
+      <ComboBox fx:id="cbClass" layoutX="195.0" layoutY="346.0" onAction="#selectClass" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="346.0" />
+      <ComboBox fx:id="cbMobil" layoutX="195.0" layoutY="401.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="406.0" />
+      <TextField layoutX="195.0" layoutY="406.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="466.0" />
       <Button layoutX="605.0" layoutY="515.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #3998F0; -fx-background-radius: 7;" text="Save" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />

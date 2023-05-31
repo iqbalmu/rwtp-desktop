@@ -17,13 +17,14 @@ public class SopirDAO implements daoInterface<Sopir> {
     public int addData(Sopir data) {
         int result = 0;
         try {
-            String query = "INSERT INTO sopir(nama_sopir, phone, alamat, ktp, sim) VALUE (?,?,?,?,?)";
+            String query = "INSERT INTO sopir(nama_sopir, phone, alamat, ktp, sim, status) VALUE (?,?,?,?,?,?)";
             PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
             ps.setString(1, data.getNama());
             ps.setString(2, data.getPhone());
             ps.setString(3, data.getAlamat());
             ps.setString(4, data.getKtp());
             ps.setString(5, data.getSim());
+            ps.setString(6, data.getStatus());
             result = ps.executeUpdate();
         }catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -52,14 +53,15 @@ public class SopirDAO implements daoInterface<Sopir> {
         int result = 0;
 
         try{
-            String query = "UPDATE sopir SET nama_sopir=?, phone=?, alamat=?, ktp=?, sim=? WHERE id_sopir=?";
+            String query = "UPDATE sopir SET nama_sopir=?, phone=?, alamat=?, ktp=?, sim=?, status=? WHERE id_sopir=?";
             PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
             ps.setString(1, data.getNama());
             ps.setString(2, data.getPhone());
             ps.setString(3, data.getAlamat());
             ps.setString(4, data.getKtp());
             ps.setString(5, data.getSim());
-            ps.setInt(6, data.getId_sopir());
+            ps.setString(6, data.getStatus());
+            ps.setInt(7, data.getId_sopir());
 
             result = ps.executeUpdate();
 
@@ -87,8 +89,9 @@ public class SopirDAO implements daoInterface<Sopir> {
                 String alamat = res.getString("alamat");
                 String ktp = res.getString("ktp");
                 String sim = res.getString("sim");
+                String status = res.getString("status");
 
-                Sopir s = new Sopir(id, nama, phone, alamat, ktp, sim);
+                Sopir s = new Sopir(id, nama, phone, alamat, ktp, sim, status);
                 sList.add(s);
             }
 
@@ -96,8 +99,33 @@ public class SopirDAO implements daoInterface<Sopir> {
             System.out.println(exception.getMessage());
         }
 
-
         return sList;
+    }
+
+    public ObservableList<Sopir> getSopirAvailable() {
+        ObservableList<Sopir> data = FXCollections.observableArrayList();
+
+        try {
+            String sql = "SELECT  * FROM  sopir WHERE  id_sopir NOT IN ( SELECT id_sopir FROM mobil )";
+            PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(sql);
+            ResultSet res = ps.executeQuery();
+            while (res.next()){
+                int id = res.getInt("id_sopir");
+                String nama = res.getString("nama_sopir");
+                String phone = res.getString("phone");
+                String alamat = res.getString("alamat");
+                String ktp = res.getString("ktp");
+                String sim = res.getString("sim");
+                String status = res.getString("status");
+
+                Sopir s = new Sopir(id, nama, phone, alamat, ktp, sim, status);
+                data.add(s);
+            }
+        }catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return data;
     }
 
 }
