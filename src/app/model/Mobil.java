@@ -26,6 +26,10 @@ public class Mobil {
         this.id_sopir = id_sopir;
     }
 
+    public Mobil() {
+
+    }
+
     public int getId() {
         return id;
     }

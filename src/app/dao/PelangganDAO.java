@@ -16,13 +16,14 @@ public class PelangganDAO implements daoInterface<Pelanggan> {
     public int addData(Pelanggan data) {
         int result = 0;
         try {
-            String query = "INSERT INTO pelanggan(nama, no_telp, kategori, alamat, isMember) VALUE (?,?,?,?,?)";
+            String query = "INSERT INTO pelanggan(id_pelanggan,nama, no_telp, kategori, alamat, isMember) VALUE (?,?,?,?,?,?)";
             PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
-            ps.setString(1, data.getNama());
-            ps.setString(2, data.getTelp());
-            ps.setString(3, data.getKategori());
-            ps.setString(4, data.getAlamat());
-            ps.setString(5, data.getIsMember());
+            ps.setString(1, data.getId());
+            ps.setString(2, data.getNama());
+            ps.setString(3, data.getTelp());
+            ps.setString(4, data.getKategori());
+            ps.setString(5, data.getAlamat());
+            ps.setBoolean(6, data.getIsMember());
             result = ps.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -37,7 +38,7 @@ public class PelangganDAO implements daoInterface<Pelanggan> {
         try {
             String query = "DELETE FROM pelanggan WHERE id_pelanggan=?";
             PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
-            ps.setInt(1, data.getId());
+            ps.setString(1, data.getId());
             result = ps.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -57,8 +58,8 @@ public class PelangganDAO implements daoInterface<Pelanggan> {
             ps.setString(2, data.getTelp());
             ps.setString(3, data.getKategori());
             ps.setString(4, data.getAlamat());
-            ps.setString(5, data.getIsMember());
-            ps.setInt(6, data.getId());
+            ps.setBoolean(5, data.getIsMember());
+            ps.setString(6, data.getId());
 
             result = ps.executeUpdate();
 
@@ -80,19 +81,12 @@ public class PelangganDAO implements daoInterface<Pelanggan> {
             ResultSet res = ps.executeQuery();
 
             while (res.next()) {
-                int id = res.getInt("id_pelanggan");
+                String id = res.getString("id_pelanggan");
                 String nama = res.getString("nama");
                 String telp = res.getString("no_telp");
                 String kategori = res.getString("kategori");
                 String alamat = res.getString("alamat");
-                String isMember = res.getString("isMember");
-
-                if (isMember == null || isMember.equals("")) {
-                    isMember = "-";
-                }
-//                else {
-//                    isMember = "Yes";
-//                }
+                boolean isMember = res.getBoolean("isMember");
 
                 Pelanggan p = new Pelanggan(id, nama, telp, kategori, alamat, isMember);
                 pList.add(p);

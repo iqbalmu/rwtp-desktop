@@ -82,14 +82,16 @@ public class PelangganController {
             Parent root = loader.load();
             Scene scene = new Scene(root);
 
-            EditPelangganController epc = loader.getController();
-            epc.setField(selected.getId(), selected.getNama(), selected.getAlamat(), selected.getTelp(), selected.getKategori(),selected.getIsMember());
+//            EditPelangganController epc = loader.getController();
+//            boolean isMember;
+//            if (selected.getIsMember())
+//            epc.setField(selected.getId(), selected.getNama(), selected.getAlamat(), selected.getTelp(), selected.getKategori(),selected.getIsMember());
 
             stage.setTitle("Edit Data Sopir");
             stage.setScene(scene);
             stage.showAndWait();
 
-            tablePelanggan.setItems(epc.getList());
+//            tablePelanggan.setItems(epc.getList());
         }else{
             Label label = new Label();
             label.setText("Data belum dipilih");

@@ -19,9 +19,9 @@ public class EditPelangganController {
     public TextField txtPhone;
     public TextField txtKategori;
     public TextField txtMember;
-    public int id;
+    public String id;
 
-    public void setField(int id, String name, String alamat, String phone, String kategori, String member){
+    public void setField(String id, String name, String alamat, String phone, String kategori, String member){
         this.id = id;
         this.txtName.setText(name);
         this.txtAlamat.setText(alamat);
@@ -37,7 +37,7 @@ public class EditPelangganController {
 
     public void updateData(ActionEvent actionEvent) throws IOException {
         System.out.println("Update data");
-        Pelanggan pelanggan = new Pelanggan(id, txtName.getText(), txtPhone.getText(),txtKategori.getText(),txtAlamat.getText(),txtMember.getText());
+        Pelanggan pelanggan = new Pelanggan(id, txtName.getText(), txtPhone.getText(),txtKategori.getText(),txtAlamat.getText(),false);
         PelangganDAO pDao = new PelangganDAO();
 
         int result = pDao.updateData(pelanggan);

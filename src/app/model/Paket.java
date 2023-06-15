@@ -3,15 +3,18 @@ package app.model;
 public class Paket {
     private int id;
     private String nopol;
+    private String noTransaksi;
     private String namaPengirim;
     private String hpPengirim;
     private String namaPenerima;
     private String hpPenerima;
     private String alamatPenerima;
     private int kuantitas;
-    private String status;
+    private int bayar;
+    private String keterangan;
 
-    public Paket(String nopol, String namaPengirim, String hpPengirim, String namaPenerima, String hpPenerima, String alamatPenerima, int kuantitas, String status) {
+    public Paket(String noTransaksi,String nopol, String namaPengirim, String hpPengirim, String namaPenerima, String hpPenerima, String alamatPenerima, int kuantitas, int bayar, String keterangan) {
+        this.noTransaksi = noTransaksi;
         this.nopol = nopol;
         this.namaPengirim = namaPengirim;
         this.hpPengirim = hpPengirim;
@@ -19,7 +22,12 @@ public class Paket {
         this.hpPenerima = hpPenerima;
         this.alamatPenerima = alamatPenerima;
         this.kuantitas = kuantitas;
-        this.status = status;
+        this.bayar = bayar;
+        this.keterangan = keterangan;
+    }
+
+    public Paket() {
+
     }
 
     public int getId() {
@@ -28,6 +36,14 @@ public class Paket {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getNoTransaksi() {
+        return noTransaksi;
+    }
+
+    public void setNoTransaksi(String noTransaksi) {
+        this.noTransaksi = noTransaksi;
     }
 
     public String getNopol() {
@@ -86,11 +102,19 @@ public class Paket {
         this.kuantitas = kuantitas;
     }
 
-    public String getStatus() {
-        return status;
+    public int getBayar() {
+        return bayar;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setBayar(int bayar) {
+        this.bayar = bayar;
+    }
+
+    public String getKeterangan() {
+        return keterangan;
+    }
+
+    public void setKeterangan(String keterangan) {
+        this.keterangan = keterangan;
     }
 }

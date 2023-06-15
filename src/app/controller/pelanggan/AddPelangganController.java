@@ -36,13 +36,14 @@ public class AddPelangganController implements Initializable {
         String nama = txtNama.getText();
         String telp = txtTelp.getText();
         String kategori = cbKategori.getSelectionModel().getSelectedItem().toString();
+        kategori = (kategori == "KTP") ? "umum" : "mahasiswa";
         String alamat = txtAlamat.getText();
 
         if(nama.isEmpty() || telp.isEmpty() || kategori.isEmpty() || alamat.isEmpty()){
             System.out.println("field kosong");
         }else{
             PelangganDAO dao = new PelangganDAO();
-            dao.addData(new Pelanggan(nama, telp, kategori, alamat, null));
+            dao.addData(new Pelanggan(nama, telp, kategori, alamat, false));
             pList = dao.showData();
         }
 

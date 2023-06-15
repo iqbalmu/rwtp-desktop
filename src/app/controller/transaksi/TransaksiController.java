@@ -3,7 +3,6 @@ package app.controller.transaksi;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -22,7 +21,7 @@ public class TransaksiController implements Initializable {
         defaultMenu();
     }
 
-    public void handlerAllTransaction(ActionEvent actionEvent){
+    public void handlerAllTransaction(){
         try{
             home = FXMLLoader.load(getClass().getResource("/xml/transaksi/ListTransaksi.fxml"));
             contentPane.getChildren().clear();
@@ -30,12 +29,11 @@ public class TransaksiController implements Initializable {
         }catch (IOException ex){
             ex.printStackTrace();
         }
-
     }
 
     public void handlerPaketMenu(ActionEvent actionEvent){
         try {
-            transaksiPane = FXMLLoader.load(getClass().getResource("/xml/transaksi/PaketTransaksi.fxml"));
+            transaksiPane = FXMLLoader.load(getClass().getResource("/xml/transaksi/store/PaketTransaksi.fxml"));
             content.getChildren().clear();
             content.getChildren().add(transaksiPane);
         } catch (IOException ex) {
@@ -45,7 +43,7 @@ public class TransaksiController implements Initializable {
 
     public void handlerRentalMenu(ActionEvent actionEvent){
         try {
-            transaksiPane = FXMLLoader.load(getClass().getResource("/xml/transaksi/RentalTransaksi2.fxml"));
+            transaksiPane = FXMLLoader.load(getClass().getResource("/xml/transaksi/store/RentalTransaksi.fxml"));
             content.getChildren().clear();
             content.getChildren().add(transaksiPane);
         } catch (IOException ex) {
@@ -59,7 +57,7 @@ public class TransaksiController implements Initializable {
 
     public void defaultMenu(){
         try{
-            transaksiPane = FXMLLoader.load(getClass().getResource("/xml/transaksi/SewaTransaksi2.fxml"));
+            transaksiPane = FXMLLoader.load(getClass().getResource("/xml/transaksi/store/SewaTransaksi.fxml"));
             content.getChildren().clear();
             content.getChildren().add(transaksiPane);
         }catch (IOException ex) {

@@ -38,13 +38,6 @@ public class EditMobilController implements Initializable {
 //    public int id_sopir;
 //    public String nopol, jenis, kelas, status;
     public void setField(int id, String nopol, String jenis, String kelas, String status, int id_sopir) {
-//        this.id = id;
-//        this.nopol = nopol;
-//        this.jenis = jenis;
-//        this.kelas = kelas;
-//        this.status = status;
-//        this.id_sopir = id_sopir;
-
         this.id = id;
         this.txtNopol.setText(nopol);
         this.cbJenis.setValue(jenis);
@@ -55,13 +48,6 @@ public class EditMobilController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        this.id = id;
-//        this.txtNopol.setText(nopol);
-//        this.cbJenis.setValue(jenis);
-//        this.cbKelas.setValue(kelas);
-//        this.cbStatus.setValue(status);
-//        this.cbSopir.setValue(getNamaSopir(id_sopir));
-
         ObservableList<String> lJenis = FXCollections.observableArrayList("Inova", "Reborn", "Panther");
         ObservableList<String> lKelas = FXCollections.observableArrayList("Ekonomi", "Eksekutif");
         ObservableList<String> lStatus = FXCollections.observableArrayList("Ready", "Maintanance");

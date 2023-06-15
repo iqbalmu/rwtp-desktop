@@ -41,6 +41,7 @@ public class LoginController {
                 if (rs.next()) {
                     m.changeScene("view/xml/main.fxml");
                     UserInfo.username = usernameTxt.getText();
+                    UserInfo.id_user = rs.getInt("id_user");
                 } else {
                     wrongLogin.setText("Data login tidak sesuai!!");
                 }

@@ -35,7 +35,7 @@ public class AddSopirController implements Initializable {
         String address = txtAlamat.getText();
         String ktp = txtKtp.getText();
         String sim = txtSim.getText();
-        String status = cbStatus.getSelectionModel().getSelectedItem().toString();
+        String status = cbStatus.getSelectionModel().getSelectedItem();
 
         if(name.isEmpty() || phone.isEmpty() || address.isEmpty() || ktp.isEmpty() || sim.isEmpty() || status.isEmpty()){
             System.out.println("field kosong");

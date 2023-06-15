@@ -1,14 +1,14 @@
 package app.model;
 
 public class Pelanggan {
-    private int id;
+    private String id;
     private String nama;
     private String telp;
     private String kategori;
     private String alamat;
-    private String isMember;
+    private boolean isMember;
 
-    public Pelanggan(int id, String nama, String telp, String kategori, String alamat, String isMember) {
+    public Pelanggan(String id, String nama, String telp, String kategori, String alamat, boolean isMember) {
         this.id = id;
         this.nama = nama;
         this.telp = telp;
@@ -17,7 +17,7 @@ public class Pelanggan {
         this.isMember = isMember;
     }
 
-    public Pelanggan(String nama, String telp, String kategori, String alamat, String isMember) {
+    public Pelanggan(String nama, String telp, String kategori, String alamat, boolean isMember) {
         this.nama = nama;
         this.telp = telp;
         this.kategori = kategori;
@@ -25,11 +25,11 @@ public class Pelanggan {
         this.isMember = isMember;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -65,19 +65,22 @@ public class Pelanggan {
         this.alamat = alamat;
     }
 
-    public String getIsMember() {
+    public boolean getIsMember() {
         return isMember;
     }
 
-    public void setIsMember(String isMember) {
+    public void setIsMember(boolean isMember) {
         this.isMember = isMember;
     }
 
     @Override
     public String toString() {
         return "Pelanggan{" +
-                "id=" + id +
-                ", nama='" + nama + '\'' +
+                "id=" + id + '\'' +
+                "nama='" + nama + '\'' +
+                "alamat='" + alamat + '\'' +
+                "telp='" + telp + '\'' +
+                "ident='" + kategori + '\'' +
                 '}';
     }
 }
