@@ -1,7 +1,6 @@
 package app.model.transaksi;
 
 import java.sql.Timestamp;
-import java.util.Date;
 
 public class Rental {
 
@@ -13,12 +12,12 @@ public class Rental {
     private int lama_rental;
     private String keterangan;
     private String no_transaksi;
-    private Timestamp timestamp;
+    private Timestamp date;
 
     public Rental() {
     }
 
-    public Rental(int id_rental, String id_pelanggan, int id_user, int bayar, String nopol, int lama_rental, String keterangan, String no_transaksi, Timestamp timestamp) {
+    public Rental(int id_rental, String id_pelanggan, int id_user, int bayar, String nopol, int lama_rental, String keterangan, String no_transaksi, Timestamp date) {
         this.id_rental = id_rental;
         this.id_pelanggan = id_pelanggan;
         this.id_user = id_user;
@@ -27,7 +26,7 @@ public class Rental {
         this.lama_rental = lama_rental;
         this.keterangan = keterangan;
         this.no_transaksi = no_transaksi;
-        this.timestamp = timestamp;
+        this.date = date;
     }
 
     public int getId_rental() {
@@ -94,11 +93,11 @@ public class Rental {
         this.no_transaksi = no_transaksi;
     }
 
-    public Timestamp getTimestamp() {
-        return timestamp;
+    public Timestamp getDate() {
+        return date;
     }
 
-    public void setTimestamp(Timestamp timestamp) {
-        this.timestamp = timestamp;
+    public void setDate(Timestamp date) {
+        this.date = date;
     }
 }

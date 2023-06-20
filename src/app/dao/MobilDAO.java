@@ -68,7 +68,9 @@ public class MobilDAO implements daoInterface<Mobil>{
         ObservableList<Mobil> mList = FXCollections.observableArrayList();
 
         try{
-            String query = "SELECT * FROM mobil";
+            String query = "SELECT id_mobil, nopol, jenis_mobil, kelas, mobil.status, sopir.nama_sopir  \n" +
+                    "FROM mobil JOIN sopir \n" +
+                    "ON mobil.id_sopir = sopir.id_sopir;";
             PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
             ResultSet res = ps.executeQuery();
 
@@ -77,10 +79,16 @@ public class MobilDAO implements daoInterface<Mobil>{
                 String nopol = res.getString("nopol");
                 String jenis = res.getString("jenis_mobil");
                 String kelas = res.getString("kelas");
-                String status = res.getString("status");
-                int id_sopir = res.getInt("id_sopir");
+                String status = res.getString("mobil.status");
+                String nama_sopir = res.getString("nama_sopir");
 
-                Mobil m = new Mobil(id, nopol, jenis, kelas, status, id_sopir);
+                Mobil m = new Mobil();
+                m.setId(id);
+                m.setNopol(nopol);
+                m.setJenis(jenis);
+                m.setKelas(kelas);
+                m.setStatus(status);
+                m.setNama_sopir(nama_sopir);
                 mList.add(m);
             }
 

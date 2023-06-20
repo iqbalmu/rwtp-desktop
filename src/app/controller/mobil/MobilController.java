@@ -20,12 +20,11 @@ import java.util.ResourceBundle;
 
 public class MobilController implements Initializable {
 
-
     public TableView<Mobil> tableMobil;
     public TableColumn<Mobil, Integer> id;
     public TableColumn<Mobil, String> nopol;
     public TableColumn<Mobil, String> jenis;
-    public TableColumn<Mobil, Integer> sopir;
+    public TableColumn<Mobil, String> sopir;
     public TableColumn<Mobil, String> kelas;
     public TableColumn<Mobil, String> status;
 
@@ -38,7 +37,7 @@ public class MobilController implements Initializable {
         jenis.setCellValueFactory(new PropertyValueFactory<Mobil, String>("jenis"));
         kelas.setCellValueFactory(new PropertyValueFactory<Mobil, String>("kelas"));
         status.setCellValueFactory(new PropertyValueFactory<Mobil, String>("status"));
-        sopir.setCellValueFactory(new PropertyValueFactory<Mobil, Integer>("id_sopir"));
+        sopir.setCellValueFactory(new PropertyValueFactory<Mobil, String>("nama_sopir"));
 
         MobilDAO mobilDAO = new MobilDAO();
         ObservableList<Mobil> mList = mobilDAO.showData();

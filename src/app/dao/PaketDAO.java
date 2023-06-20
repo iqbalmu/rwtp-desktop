@@ -1,16 +1,11 @@
 package app.dao;
 
-import app.model.Mobil;
-import app.model.Paket;
+import app.model.transaksi.Paket;
 import app.utility.JDBCConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
+import java.sql.*;
 
 public class PaketDAO implements daoInterface<Paket> {
     @Override
@@ -23,7 +18,7 @@ public class PaketDAO implements daoInterface<Paket> {
                 ps.executeUpdate();
             }
 
-            try(PreparedStatement ps = JDBCConnection.getConnection().prepareStatement("INSERT INTO paket(no_transaksi, nopol, nama_pengirim, hp_pengirim, nama_penerima, hp_penerima, tujuan, kuantitas, bayar, keterangan) VALUE (?,?,?,?,?,?,?,?,?,?)")) {
+            try(PreparedStatement ps = JDBCConnection.getConnection().prepareStatement("INSERT INTO paket(no_transaksi, nopol, nama_pengirim, hp_pengirim, nama_penerima, hp_penerima, tujuan, kuantitas, bayar, keterangan, date) VALUE (?,?,?,?,?,?,?,?,?,?,?)")) {
 
                 ps.setString(1, data.getNoTransaksi());
                 ps.setString(2, data.getNopol());
@@ -35,6 +30,7 @@ public class PaketDAO implements daoInterface<Paket> {
                 ps.setInt(8, data.getKuantitas());
                 ps.setInt(9, data.getBayar());
                 ps.setString(10, data.getKeterangan());
+                ps.setTimestamp(11, data.getDate());
                 result = ps.executeUpdate();
             }
         }
@@ -56,7 +52,7 @@ public class PaketDAO implements daoInterface<Paket> {
 
     @Override
     public ObservableList<Paket> showData() {
-        ObservableList<Paket> pList =FXCollections.observableArrayList();
+        ObservableList<Paket> pList = FXCollections.observableArrayList();
 
         try{
             String query = "SELECT * FROM paket";
@@ -64,6 +60,7 @@ public class PaketDAO implements daoInterface<Paket> {
             ResultSet res = ps.executeQuery();
 
             while (res.next()){
+                Timestamp date = res.getTimestamp("date");
                 int id = res.getInt("id_paket");
                 String nopol = res.getString("nopol");
                 String pengirim = res.getString("nama_pengirim");
@@ -74,6 +71,7 @@ public class PaketDAO implements daoInterface<Paket> {
                 paket.setNopol(nopol);
                 paket.setNamaPenerima(penerima);
                 paket.setNamaPengirim(pengirim);
+                paket.setDate(date);
                 pList.add(paket);
             }
 

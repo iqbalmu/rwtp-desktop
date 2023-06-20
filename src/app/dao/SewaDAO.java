@@ -1,15 +1,12 @@
 package app.dao;
 
-import app.model.Mobil;
+import app.model.transaksi.Rental;
 import app.model.transaksi.Sewa;
 import app.utility.JDBCConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,7 +27,7 @@ public class SewaDAO implements daoInterface<Sewa> {
                 ps.setString(1, data.getId_pelanggan());
                 ps.setString(2, data.getNopol());
                 ps.setInt(3, data.getId_user());
-                ps.setTimestamp(4, data.getTimestamp());
+                ps.setTimestamp(4, data.getDate());
                 ps.setString(5, data.getJadwal());
                 ps.setString(6, data.getKursi());
                 ps.setString(7, data.getTujuan());
@@ -78,7 +75,37 @@ public class SewaDAO implements daoInterface<Sewa> {
     }
 
     @Override
-    public List<Sewa> showData() {
-        return null;
+    public ObservableList<Sewa> showData() {
+        ObservableList<Sewa> lSewa = FXCollections.observableArrayList();
+        try{
+            String query = "SELECT `date`, no_transaksi, nopol, jadwal, kursi, tujuan, pelanggan.nama FROM sewa_transaksi st JOIN pelanggan ON st.id_pelanggan = pelanggan.id_pelanggan;";
+            PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
+            ResultSet res = ps.executeQuery();
+
+            while (res.next()){
+                Timestamp date = res.getTimestamp("date");
+                String no_transaksi = res.getString("no_transaksi");
+                String nopol = res.getString("nopol");
+                String nama = res.getString("nama");
+                String jadwal = res.getString("jadwal");
+                String kursi = res.getString("kursi");
+                String tujuan = res.getString("tujuan");
+
+                Sewa sewa = new Sewa();
+                sewa.setDate(date);
+                sewa.setNo_transaksi(no_transaksi);
+                sewa.setNopol(nopol);
+                sewa.setId_pelanggan(nama);
+                sewa.setJadwal(jadwal);
+                sewa.setKursi(kursi);
+                sewa.setTujuan(tujuan);
+
+                lSewa.add(sewa);
+            }
+
+        }catch (SQLException ex){
+            System.out.println(ex.getMessage());
+        }
+        return lSewa;
     }
 }

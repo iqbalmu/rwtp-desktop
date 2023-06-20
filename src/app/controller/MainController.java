@@ -44,14 +44,14 @@ public class MainController {
         }
     }
 
-    public void getSceneAddTransaksi(){
-        try {
-            home = FXMLLoader.load(getClass().getResource("/xml/transaksi/Transaksi.fxml"));
-            setNode(home);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
+//    public void getSceneAddTransaksi(){
+//        try {
+//            home = FXMLLoader.load(getClass().getResource("/xml/transaksi/Transaksi.fxml"));
+//            setNode(home);
+//        } catch (IOException ex) {
+//            ex.printStackTrace();
+//        }
+//    }
 
     public void logout(ActionEvent actionEvent) throws IOException {
         Main m = new Main();

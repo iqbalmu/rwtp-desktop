@@ -1,4 +1,6 @@
-package app.model;
+package app.model.transaksi;
+
+import java.sql.Timestamp;
 
 public class Paket {
     private int id;
@@ -12,8 +14,9 @@ public class Paket {
     private int kuantitas;
     private int bayar;
     private String keterangan;
+    private Timestamp date;
 
-    public Paket(String noTransaksi,String nopol, String namaPengirim, String hpPengirim, String namaPenerima, String hpPenerima, String alamatPenerima, int kuantitas, int bayar, String keterangan) {
+    public Paket(String noTransaksi,String nopol, String namaPengirim, String hpPengirim, String namaPenerima, String hpPenerima, String alamatPenerima, int kuantitas, int bayar, String keterangan, Timestamp date) {
         this.noTransaksi = noTransaksi;
         this.nopol = nopol;
         this.namaPengirim = namaPengirim;
@@ -24,6 +27,7 @@ public class Paket {
         this.kuantitas = kuantitas;
         this.bayar = bayar;
         this.keterangan = keterangan;
+        this.date = date;
     }
 
     public Paket() {
@@ -116,5 +120,13 @@ public class Paket {
 
     public void setKeterangan(String keterangan) {
         this.keterangan = keterangan;
+    }
+
+    public Timestamp getDate() {
+        return date;
+    }
+
+    public void setDate(Timestamp date) {
+        this.date = date;
     }
 }

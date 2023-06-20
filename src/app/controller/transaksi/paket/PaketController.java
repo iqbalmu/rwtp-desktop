@@ -1,9 +1,9 @@
-package app.controller.transaksi.store;
+package app.controller.transaksi.paket;
 
 import app.dao.MobilDAO;
 import app.dao.PaketDAO;
 import app.model.Mobil;
-import app.model.Paket;
+import app.model.transaksi.Paket;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -11,6 +11,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.UUID;
 
@@ -41,12 +43,13 @@ public class PaketController implements Initializable {
         int kuantitasTxt = Integer.parseInt(kuantitas.getText());
         int bayar = 30000 * kuantitasTxt; // untuk harga nanti dinamis dari database tabel harga
         String keterangan = "";
+        Timestamp date = new Timestamp(new Date().getTime());
 
         if (namaPengirim.isEmpty() || hpPengirim.isEmpty() || namaPenerima.isEmpty() || hpPenerima.isEmpty() || alamatPenerima.isEmpty() || kuantitasTxt < 1){
             System.out.println("Lengkapi Data Paket");
         }else{
             PaketDAO paketDAO = new PaketDAO();
-            paketDAO.addData(new Paket(noTransaksi, nopol, namaPengirim, hpPengirim, namaPenerima,hpPenerima, alamatPenerima, kuantitasTxt, bayar, keterangan));
+            paketDAO.addData(new Paket(noTransaksi, nopol, namaPengirim, hpPengirim, namaPenerima,hpPenerima, alamatPenerima, kuantitasTxt, bayar, keterangan, date));
         }
     }
 

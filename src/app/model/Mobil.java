@@ -8,6 +8,7 @@ public class Mobil {
     private String kelas;
     private String status;
     private int id_sopir;
+    private String nama_sopir;
 
     public Mobil(String nopol, String jenis, String kelas, String status, int id_sopir) {
         this.nopol = nopol;
@@ -81,5 +82,13 @@ public class Mobil {
     @Override
     public String toString() {
         return getNopol();
+    }
+
+    public String getNama_sopir() {
+        return nama_sopir;
+    }
+
+    public void setNama_sopir(String nama_sopir) {
+        this.nama_sopir = nama_sopir;
     }
 }

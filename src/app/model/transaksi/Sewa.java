@@ -7,7 +7,7 @@ public class Sewa {
     private String id_pelanggan;
     private String nopol;
     private int id_user;
-    private Timestamp timestamp;
+    private Timestamp date;
     private String jadwal;
     private String kursi;
     private String tujuan;
@@ -15,11 +15,11 @@ public class Sewa {
     private int bayar;
     private String keterangan;
 
-    public Sewa(String id_pelanggan, String nopol, int id_user, Timestamp timestamp, String jadwal, String kursi, String tujuan, String no_transaksi, int bayar, String keterangan) {
+    public Sewa(String id_pelanggan, String nopol, int id_user, Timestamp date, String jadwal, String kursi, String tujuan, String no_transaksi, int bayar, String keterangan) {
         this.id_pelanggan = id_pelanggan;
         this.nopol = nopol;
         this.id_user = id_user;
-        this.timestamp = timestamp;
+        this.date = date;
         this.jadwal = jadwal;
         this.kursi = kursi;
         this.tujuan = tujuan;
@@ -64,12 +64,12 @@ public class Sewa {
         this.id_user = id_user;
     }
 
-    public Timestamp getTimestamp() {
-        return timestamp;
+    public Timestamp getDate() {
+        return date;
     }
 
-    public void setTimestamp(Timestamp timestamp) {
-        this.timestamp = timestamp;
+    public void setDate(Timestamp date) {
+        this.date = date;
     }
 
     public String getJadwal() {

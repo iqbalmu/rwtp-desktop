@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="contentPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.transaksi.ListTransaksiController">
+<AnchorPane fx:id="contentPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.transaksi.ListTransaksiController">
    <children>
       <Label layoutX="21.0" layoutY="19.0" text="Transaksi" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
          <font>
@@ -28,9 +29,9 @@
          <padding>
             <Insets bottom="10.0" left="30.0" right="15.0" top="10.0" />
          </padding></Button>
-      <Button fx:id="btnRental" layoutX="707.0" layoutY="65.0" mnemonicParsing="false" onAction="#showRentalTable" prefHeight="35.0" prefWidth="60.0" text="Rental" AnchorPane.topAnchor="47.0" />
-      <Button fx:id="btnSewa" layoutX="783.0" layoutY="64.0" mnemonicParsing="false" onAction="#showSewaTable" prefHeight="35.0" prefWidth="60.0" text="Sewa" AnchorPane.topAnchor="47.0" />
-      <Button fx:id="btnPaket" layoutX="857.0" layoutY="64.0" mnemonicParsing="false" onAction="#showPaketTable" prefHeight="35.0" prefWidth="60.0" text="Paket" AnchorPane.topAnchor="47.0" />
+      <Button fx:id="btnRental" layoutX="707.0" layoutY="65.0" mnemonicParsing="false" onAction="#showRentalTable" prefHeight="35.0" prefWidth="60.0" style="-fx-background-color: #d3d3d3;" text="Rental" AnchorPane.topAnchor="47.0" />
+      <Button fx:id="btnSewa" layoutX="783.0" layoutY="64.0" mnemonicParsing="false" onAction="#showSewaTable" prefHeight="35.0" prefWidth="60.0" style="-fx-background-color: #d3d3d3;" text="Sewa" AnchorPane.topAnchor="47.0" />
+      <Button fx:id="btnPaket" layoutX="857.0" layoutY="64.0" mnemonicParsing="false" onAction="#showPaketTable" prefHeight="35.0" prefWidth="60.0" style="-fx-background-color: #d3d3d3;" text="Paket" AnchorPane.topAnchor="47.0" />
       <AnchorPane fx:id="tablePane" layoutX="34.0" layoutY="130.0" prefHeight="575.0" prefWidth="1035.0" style="-fx-background-color: gray;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="115.0" />
    </children>
    <padding>

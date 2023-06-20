@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="1035.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.transaksi.sewa.TableSewaController">
+    <children>
+        <TableView fx:id="tableSewa" prefHeight="575.0" prefWidth="1035.0">
+            <columns>
+                <TableColumn fx:id="date" prefWidth="127.3333740234375" text="Date" />
+            <TableColumn fx:id="no_transaksi" prefWidth="127.3333740234375" text="No Transaksi" />
+                <TableColumn fx:id="nama_pelanggan" minWidth="0.0" prefWidth="197.0" text="Nama Pelanggan" />
+                <TableColumn fx:id="nopol" prefWidth="172.0" text="Nopol" />
+                <TableColumn fx:id="jadwal" prefWidth="141.0" text="Jadwal" />
+                <TableColumn fx:id="kursi" prefWidth="151.0" text="Kursi" />
+                <TableColumn fx:id="tujuan" prefWidth="115.0" text="Tujuan" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

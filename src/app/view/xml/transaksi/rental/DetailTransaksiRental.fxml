@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="363.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.transaksi.rental.DetailRentalController">
+   <children>
+      <Pane layoutX="-4.0" layoutY="-3.0" prefHeight="35.0" prefWidth="375.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="279.0" layoutY="9.0" text="05/32/2023" textFill="WHITE" />
+            <Label layoutX="14.0" layoutY="9.0" text="1d121212f31f23df" textFill="WHITE" />
+         </children>
+      </Pane>
+      <Label layoutX="35.0" layoutY="53.0" text="Nama Lengkap" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="53.0" />
+      <Label layoutX="35.0" layoutY="93.0" text="Nomor NIK" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="93.0" />
+      <Label layoutX="35.0" layoutY="213.0" text="Waktu Pinjam" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="213.0" />
+      <Label layoutX="35.0" layoutY="173.0" text="Kelas Mobil" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="173.0" />
+      <Label layoutX="35.0" layoutY="133.0" text="Nopol" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="133.0" />
+      <Label fx:id="txtNama" layoutX="155.0" layoutY="53.0" text="Jamaludin" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="53.0" />
+      <Label fx:id="txtPinjamDate" layoutX="155.0" layoutY="213.0" text="23/2/2023" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="213.0" />
+      <Label fx:id="txtKelas" layoutX="155.0" layoutY="173.0" text="Executive" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="173.0" />
+      <Label fx:id="txtNopol" layoutX="155.0" layoutY="133.0" text="BA 2123 EP" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="133.0" />
+      <Label fx:id="txtNik" layoutX="155.0" layoutY="93.0" text="083267685544" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="93.0" />
+      <Label layoutX="35.0" layoutY="253.0" text="Waktu Kembali" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="253.0" />
+      <Label fx:id="txtBalikDate" layoutX="155.0" layoutY="253.0" text="27/2/2023" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="253.0" />
+      <Label layoutX="35.0" layoutY="293.0" text="Biaya" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="293.0" />
+      <Label layoutX="145.0" layoutY="293.0" text=":" AnchorPane.leftAnchor="145.0" AnchorPane.topAnchor="293.0" />
+      <Label fx:id="txtBiaya" layoutX="155.0" layoutY="293.0" text="Rp. 100,000" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="293.0" />
+      <Label layoutX="145.0" layoutY="213.0" text=":" AnchorPane.leftAnchor="145.0" AnchorPane.topAnchor="213.0" />
+      <Label layoutX="145.0" layoutY="174.0" text=":" AnchorPane.leftAnchor="145.0" AnchorPane.topAnchor="174.0" />
+      <Label layoutX="145.0" layoutY="253.0" text=":" AnchorPane.leftAnchor="145.0" AnchorPane.topAnchor="253.0" />
+      <Label layoutX="145.0" layoutY="133.0" text=":" AnchorPane.leftAnchor="145.0" AnchorPane.topAnchor="133.0" />
+      <Label layoutX="145.0" layoutY="93.0" text=":" AnchorPane.leftAnchor="145.0" AnchorPane.topAnchor="93.0" />
+      <Label layoutX="145.0" layoutY="53.0" text=":" AnchorPane.leftAnchor="145.0" AnchorPane.topAnchor="53.0" />
+      <Button layoutX="293.0" layoutY="360.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="57.0" text="oke" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="20.0" />
+      <Button layoutX="227.0" layoutY="360.0" mnemonicParsing="false" text="cancel" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="90.0" />
+   </children>
+</AnchorPane>

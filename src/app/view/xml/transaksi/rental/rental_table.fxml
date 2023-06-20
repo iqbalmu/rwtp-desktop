@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="1035.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.transaksi.rental.TableRentalController">
+   <children>
+      <TableView fx:id="tableRental" prefHeight="575.0" prefWidth="1035.0">
+        <columns>
+          <TableColumn fx:id="date" prefWidth="183.0" text="Date" />
+            <TableColumn fx:id="noTransaksi" prefWidth="233.0" text="No Transaksi" />
+          <TableColumn fx:id="nama" minWidth="0.0" prefWidth="252.0" text="Nama" />
+            <TableColumn fx:id="nopol" prefWidth="214.0" text="Nopol" />
+            <TableColumn fx:id="lamaRental" prefWidth="152.0" text="Lama Rental" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
