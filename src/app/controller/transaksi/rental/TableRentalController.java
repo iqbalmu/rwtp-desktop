@@ -10,6 +10,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class TableRentalController implements Initializable {
@@ -18,7 +19,8 @@ public class TableRentalController implements Initializable {
     public TableColumn<Rental, String> noTransaksi;
     public TableColumn<Rental, String> nama;
     public TableColumn<Rental, String> nopol;
-    public TableColumn<Rental, Integer> lamaRental;
+    public TableColumn<Rental, Date> rentalDate;
+    public TableColumn<Rental, Date> returnDate;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -26,7 +28,8 @@ public class TableRentalController implements Initializable {
         noTransaksi.setCellValueFactory(new PropertyValueFactory<Rental, String>("no_transaksi"));
         nama.setCellValueFactory(new PropertyValueFactory<Rental, String >("id_pelanggan"));
         nopol.setCellValueFactory(new PropertyValueFactory<Rental, String>("nopol"));
-        lamaRental.setCellValueFactory(new PropertyValueFactory<Rental, Integer>("lama_rental"));
+        rentalDate.setCellValueFactory(new PropertyValueFactory<Rental, Date>("rental_date"));
+        returnDate.setCellValueFactory(new PropertyValueFactory<Rental, Date>("return_date"));
 
         RentalDAO rentalDAO = new RentalDAO();
         ObservableList<Rental> rentals = rentalDAO.showData();

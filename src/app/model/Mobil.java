@@ -81,7 +81,7 @@ public class Mobil {
 
     @Override
     public String toString() {
-        return getNopol();
+        return getNopol() + " | " + getJenis();
     }
 
     public String getNama_sopir() {

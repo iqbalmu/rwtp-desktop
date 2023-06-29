@@ -22,8 +22,8 @@ public class SewaDAO implements daoInterface<Sewa> {
                 ps.executeUpdate();
             }
 
-            try(PreparedStatement ps = conn.prepareStatement("INSERT INTO sewa_transaksi(id_pelanggan, nopol, id_user, tanggal, jadwal, kursi, tujuan, no_transaksi, bayar, keterangan) " +
-                    "VALUE (?,?,?,?,?,?,?,?,?,?)")) {
+            try(PreparedStatement ps = conn.prepareStatement("INSERT INTO sewa_transaksi(id_pelanggan, nopol, id_user, `date`, jadwal, kursi, tujuan, no_transaksi, harga, keterangan, sewa_date) " +
+                    "VALUE (?,?,?,?,?,?,?,?,?,?,?)")) {
                 ps.setString(1, data.getId_pelanggan());
                 ps.setString(2, data.getNopol());
                 ps.setInt(3, data.getId_user());
@@ -32,8 +32,9 @@ public class SewaDAO implements daoInterface<Sewa> {
                 ps.setString(6, data.getKursi());
                 ps.setString(7, data.getTujuan());
                 ps.setString(8, data.getNo_transaksi());
-                ps.setInt(9, data.getBayar());
+                ps.setDouble(9, data.getHarga());
                 ps.setString(10, data.getKeterangan());
+                ps.setDate(11, data.getSewa_date());
                 ps.executeUpdate();
             }
         }catch (SQLException ex) {
@@ -60,7 +61,6 @@ public class SewaDAO implements daoInterface<Sewa> {
         }catch (SQLException ex){
             System.out.println(ex.getMessage());
         }
-
         return data;
     }
 

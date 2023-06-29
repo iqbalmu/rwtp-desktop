@@ -1,32 +1,24 @@
 package app.model.transaksi;
 
 import java.sql.Timestamp;
+import java.sql.Date;
 
 public class Rental {
 
     private int id_rental;
     private String id_pelanggan;
     private int id_user;
-    private int bayar;
+    private double bayar;
     private String nopol;
     private int lama_rental;
     private String keterangan;
     private String no_transaksi;
     private Timestamp date;
+    private Date rental_date;
+
+    private Date return_date;
 
     public Rental() {
-    }
-
-    public Rental(int id_rental, String id_pelanggan, int id_user, int bayar, String nopol, int lama_rental, String keterangan, String no_transaksi, Timestamp date) {
-        this.id_rental = id_rental;
-        this.id_pelanggan = id_pelanggan;
-        this.id_user = id_user;
-        this.bayar = bayar;
-        this.nopol = nopol;
-        this.lama_rental = lama_rental;
-        this.keterangan = keterangan;
-        this.no_transaksi = no_transaksi;
-        this.date = date;
     }
 
     public int getId_rental() {
@@ -53,11 +45,11 @@ public class Rental {
         this.id_user = id_user;
     }
 
-    public int getBayar() {
+    public double getBayar() {
         return bayar;
     }
 
-    public void setBayar(int bayar) {
+    public void setBayar(double bayar) {
         this.bayar = bayar;
     }
 
@@ -99,5 +91,21 @@ public class Rental {
 
     public void setDate(Timestamp date) {
         this.date = date;
+    }
+
+    public Date getRental_date() {
+        return rental_date;
+    }
+
+    public void setRental_date(Date rental_date) {
+        this.rental_date = rental_date;
+    }
+
+    public Date getReturn_date() {
+        return return_date;
+    }
+
+    public void setReturn_date(Date return_date) {
+        this.return_date = return_date;
     }
 }

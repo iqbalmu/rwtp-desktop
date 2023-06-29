@@ -1,5 +1,6 @@
 package app.model.transaksi;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 public class Sewa {
@@ -8,23 +9,25 @@ public class Sewa {
     private String nopol;
     private int id_user;
     private Timestamp date;
+    private Date sewa_date;
     private String jadwal;
     private String kursi;
     private String tujuan;
     private String no_transaksi;
-    private int bayar;
+    private double harga;
     private String keterangan;
 
-    public Sewa(String id_pelanggan, String nopol, int id_user, Timestamp date, String jadwal, String kursi, String tujuan, String no_transaksi, int bayar, String keterangan) {
+    public Sewa(String id_pelanggan, String nopol, int id_user, Timestamp date, Date sewa_date, String jadwal, String kursi, String tujuan, String no_transaksi, double harga, String keterangan) {
         this.id_pelanggan = id_pelanggan;
         this.nopol = nopol;
         this.id_user = id_user;
         this.date = date;
+        this.sewa_date = sewa_date;
         this.jadwal = jadwal;
         this.kursi = kursi;
         this.tujuan = tujuan;
         this.no_transaksi = no_transaksi;
-        this.bayar = bayar;
+        this.harga = harga;
         this.keterangan = keterangan;
     }
 
@@ -72,6 +75,14 @@ public class Sewa {
         this.date = date;
     }
 
+    public Date getSewa_date() {
+        return sewa_date;
+    }
+
+    public void setSewa_date(Date sewa_date) {
+        this.sewa_date = sewa_date;
+    }
+
     public String getJadwal() {
         return jadwal;
     }
@@ -104,12 +115,12 @@ public class Sewa {
         this.no_transaksi = no_transaksi;
     }
 
-    public int getBayar() {
-        return bayar;
+    public double getHarga() {
+        return harga;
     }
 
-    public void setBayar(int bayar) {
-        this.bayar = bayar;
+    public void setHarga(double harga) {
+        this.harga = harga;
     }
 
     public String getKeterangan() {
@@ -119,4 +130,5 @@ public class Sewa {
     public void setKeterangan(String keterangan) {
         this.keterangan = keterangan;
     }
+
 }

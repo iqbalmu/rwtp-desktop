@@ -109,12 +109,14 @@ public class MobilDAO implements daoInterface<Mobil>{
 
             while (res.next()){
                 String nopol = res.getString("nopol");
+                String jenis = res.getString("jenis_mobil");
                 String status = res.getString("status");
                 int id_sopir = res.getInt("id_sopir");
 
                 Mobil m = new Mobil();
                 m.setNopol(nopol);
                 m.setStatus(status);
+                m.setJenis(jenis);
                 m.setId_sopir(id_sopir);
                 data.add(m);
             }
