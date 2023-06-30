@@ -27,5 +27,7 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="net.sf.jasperreports" level="project" />
+    <orderEntry type="library" name="junit.jupiter" level="project" />
+    <orderEntry type="library" name="javapos" level="project" />
   </component>
 </module>

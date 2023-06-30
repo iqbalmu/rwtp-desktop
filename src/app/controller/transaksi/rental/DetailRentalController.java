@@ -47,43 +47,75 @@ public class DetailRentalController {
 
     public void okeHandler(ActionEvent actionEvent) {
         status = true;
+
         Node n = (Node) actionEvent.getSource();
         Stage stage = (Stage) n.getScene().getWindow();
+
+        //print scene
+        Printer printer = Printer.getDefaultPrinter();
+        PageLayout pageLayout = printer.getDefaultPageLayout();
+
+        PrinterJob job = PrinterJob.createPrinterJob();
+        if (job != null) {
+            // Mendapatkan Scene aktif
+            Scene activeScene = stage.getScene();
+
+            // Mendapatkan root Node dari Scene aktif
+            Node root = activeScene.getRoot();
+
+            boolean success = job.printPage(pageLayout, root);
+            if (success) {
+                job.endJob();
+            }
+        }
+        try {
+            // Mendapatkan Scene aktif
+            Scene activeScene = stage.getScene();
+
+            // Membuat Snapshot dari Scene
+            WritableImage snapshot = activeScene.snapshot(null);
+
+            // Menampilkan pratinjau cetak dalam ImageView
+            PrintPreviewDialog.showPrintPreview(stage, snapshot);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         stage.close();
     }
 
 //    public void printHandler(ActionEvent actionEvent) {
-////        Printer printer = Printer.getDefaultPrinter();
-////        PageLayout pageLayout = printer.getDefaultPageLayout();
-////
-////        PrinterJob job = PrinterJob.createPrinterJob();
-////        if (job != null) {
-////            // Mendapatkan Scene aktif
-////            Node n = (Node) actionEvent.getSource();
-////            Stage stage = (Stage) n.getScene().getWindow();
-////            Scene activeScene = stage.getScene();
-////
-////            // Mendapatkan root Node dari Scene aktif
-////            Node root = activeScene.getRoot();
-////
-////            boolean success = job.printPage(pageLayout, root);
-////            if (success) {
-////                job.endJob();
-////            }
-////        }
-////        try {
-////            // Mendapatkan Scene aktif
-////              Node n = (Node) actionEvent.getSource();
-////              Stage stage = (Stage) n.getScene().getWindow();
-////              Scene activeScene = stage.getScene();
-////
-////            // Membuat Snapshot dari Scene
-////            WritableImage snapshot = activeScene.snapshot(null);
-////
-////            // Menampilkan pratinjau cetak dalam ImageView
-////            PrintPreviewDialog.showPrintPreview(stage, snapshot);
-////        } catch (IOException e) {
-////            e.printStackTrace();
-////        }
+//        Printer printer = Printer.getDefaultPrinter();
+//        PageLayout pageLayout = printer.getDefaultPageLayout();
+//
+//        PrinterJob job = PrinterJob.createPrinterJob();
+//        if (job != null) {
+//            // Mendapatkan Scene aktif
+//            Node n = (Node) actionEvent.getSource();
+//            Stage stage = (Stage) n.getScene().getWindow();
+//            Scene activeScene = stage.getScene();
+//
+//            // Mendapatkan root Node dari Scene aktif
+//            Node root = activeScene.getRoot();
+//
+//            boolean success = job.printPage(pageLayout, root);
+//            if (success) {
+//                job.endJob();
+//            }
+//        }
+//        try {
+//            // Mendapatkan Scene aktif
+//              Node n = (Node) actionEvent.getSource();
+//              Stage stage = (Stage) n.getScene().getWindow();
+//              Scene activeScene = stage.getScene();
+//
+//            // Membuat Snapshot dari Scene
+//            WritableImage snapshot = activeScene.snapshot(null);
+//
+//            // Menampilkan pratinjau cetak dalam ImageView
+//            PrintPreviewDialog.showPrintPreview(stage, snapshot);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 //    }
 }

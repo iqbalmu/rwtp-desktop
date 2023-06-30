@@ -1,8 +1,10 @@
 package app.controller.transaksi.paket;
 
 import app.utility.JDBCConnection;
+import app.utility.PrintThermal;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
+import javafx.print.PrinterJob;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
@@ -43,6 +45,9 @@ public class DetailPaketController {
         status = true;
         Node n = (Node) actionEvent.getSource();
         Stage stage = (Stage) n.getScene().getWindow();
+
+        PrintThermal.print("tees print thermal");
+
         stage.close();
     }
 
