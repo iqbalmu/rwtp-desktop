@@ -22,26 +22,26 @@
       <Label layoutX="45.0" layoutY="85.0" prefHeight="30.0" text="Nama Lengkap" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="85.0" />
       <Label layoutX="45.0" layoutY="130.0" prefHeight="30.0" text="Identitas" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="130.0" />
       <Label layoutX="45.0" layoutY="175.0" prefHeight="30.0" text="Alamat" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="220.0" />
-      <Label layoutX="45.0" layoutY="265.0" prefHeight="30.0" text="Class" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="310.0" />
-      <Label layoutX="45.0" layoutY="410.0" prefHeight="30.0" text="Tanggal Sewa" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="410.0" />
+      <Label layoutX="42.0" layoutY="494.0" prefHeight="30.0" text="Class" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="360.0" />
+      <Label layoutX="45.0" layoutY="410.0" prefHeight="30.0" text="Tanggal Sewa" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="310.0" />
       <Label layoutX="45.0" layoutY="455.0" prefHeight="30.0" text="Nomor Telepon" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="455.0" />
-      <Label layoutX="45.0" layoutY="370.0" prefHeight="30.0" prefWidth="42.0" text="Kursi" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="365.0" />
+      <Label layoutX="45.0" layoutY="370.0" prefHeight="30.0" prefWidth="42.0" text="Kursi" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="410.0" />
       <Label layoutX="45.0" layoutY="220.0" prefHeight="30.0" text="Tujuan" AnchorPane.topAnchor="265.0" />
-      <Label layoutX="364.0" layoutY="310.0" prefHeight="30.0" text="Mobil" AnchorPane.leftAnchor="370.0" AnchorPane.topAnchor="310.0" />
+      <Label layoutX="367.0" layoutY="494.0" prefHeight="30.0" text="Mobil" AnchorPane.leftAnchor="367.0" AnchorPane.topAnchor="360.0" />
       <TextField fx:id="txtNama" layoutX="195.0" layoutY="85.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="85.0" />
       <ComboBox fx:id="cbIdentitas" layoutX="195.0" layoutY="130.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="130.0" />
       <TextField fx:id="txtAlamat" layoutX="195.0" layoutY="175.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="220.0" />
       <TextField fx:id="txtTujuan" layoutX="196.0" layoutY="220.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.topAnchor="265.0" />
-      <ComboBox fx:id="cbClass" layoutX="195.0" layoutY="265.0" onAction="#selectClass" prefHeight="30.0" prefWidth="156.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="310.0" />
-      <ComboBox fx:id="cbMobil" layoutX="420.0" layoutY="320.0" onAction="#selectMobil" prefHeight="30.0" prefWidth="175.0" AnchorPane.leftAnchor="420.0" AnchorPane.topAnchor="310.0" />
-      <CheckBox fx:id="ck1" layoutX="195.0" layoutY="370.0" mnemonicParsing="false" text="1" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="365.0" />
-      <CheckBox fx:id="ck2" layoutX="240.0" layoutY="370.0" mnemonicParsing="false" text="2" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="365.0" />
-      <CheckBox fx:id="ck3" layoutX="285.0" layoutY="370.0" mnemonicParsing="false" text="3" AnchorPane.leftAnchor="285.0" AnchorPane.topAnchor="365.0" />
-      <CheckBox fx:id="ck4" layoutX="330.0" layoutY="370.0" mnemonicParsing="false" text="4" AnchorPane.leftAnchor="330.0" AnchorPane.topAnchor="365.0" />
-      <CheckBox fx:id="ck5" layoutX="375.0" layoutY="370.0" mnemonicParsing="false" text="5" AnchorPane.leftAnchor="375.0" AnchorPane.topAnchor="365.0" />
-      <CheckBox fx:id="ck6" layoutX="420.0" layoutY="370.0" mnemonicParsing="false" text="6" AnchorPane.leftAnchor="420.0" AnchorPane.topAnchor="365.0" />
-      <CheckBox fx:id="ckcc" layoutX="465.0" layoutY="370.0" mnemonicParsing="false" text="CC" AnchorPane.leftAnchor="465.0" AnchorPane.topAnchor="365.0" />
-      <ComboBox fx:id="cbJadwal" layoutX="420.0" layoutY="410.0" prefHeight="30.0" prefWidth="175.0" AnchorPane.leftAnchor="420.0" AnchorPane.topAnchor="410.0" />
+      <ComboBox fx:id="cbClass" layoutX="192.0" layoutY="494.0" onAction="#selectClass" prefHeight="30.0" prefWidth="156.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="360.0" />
+      <ComboBox fx:id="cbMobil" layoutX="417.0" layoutY="494.0" onAction="#selectMobil" prefHeight="30.0" prefWidth="175.0" AnchorPane.leftAnchor="420.0" AnchorPane.topAnchor="360.0" />
+      <CheckBox fx:id="ck1" layoutX="195.0" layoutY="370.0" mnemonicParsing="false" text="1" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="410.0" />
+      <CheckBox fx:id="ck2" layoutX="240.0" layoutY="370.0" mnemonicParsing="false" text="2" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="410.0" />
+      <CheckBox fx:id="ck3" layoutX="285.0" layoutY="370.0" mnemonicParsing="false" text="3" AnchorPane.leftAnchor="285.0" AnchorPane.topAnchor="410.0" />
+      <CheckBox fx:id="ck4" layoutX="330.0" layoutY="370.0" mnemonicParsing="false" text="4" AnchorPane.leftAnchor="330.0" AnchorPane.topAnchor="410.0" />
+      <CheckBox fx:id="ck5" layoutX="375.0" layoutY="370.0" mnemonicParsing="false" text="5" AnchorPane.leftAnchor="375.0" AnchorPane.topAnchor="410.0" />
+      <CheckBox fx:id="ck6" layoutX="420.0" layoutY="370.0" mnemonicParsing="false" text="6" AnchorPane.leftAnchor="420.0" AnchorPane.topAnchor="410.0" />
+      <CheckBox fx:id="ckcc" layoutX="465.0" layoutY="370.0" mnemonicParsing="false" text="CC" AnchorPane.leftAnchor="465.0" AnchorPane.topAnchor="410.0" />
+      <ComboBox fx:id="cbJadwal" layoutX="420.0" layoutY="410.0" prefHeight="30.0" prefWidth="175.0" AnchorPane.leftAnchor="420.0" AnchorPane.topAnchor="310.0" />
       <TextField fx:id="txtPhone" layoutX="195.0" layoutY="455.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="455.0" />
       <Button layoutX="603.0" layoutY="509.0" mnemonicParsing="false" onAction="#saveHandler" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #3998F0; -fx-background-radius: 7;" text="Save" textFill="WHITE">
          <font>
@@ -54,8 +54,8 @@
       <Label layoutX="42.0" layoutY="175.0" prefHeight="30.0" text="Nomor Identitas" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="175.0" />
       <TextField fx:id="txtIdentitas" layoutX="192.0" layoutY="175.0" prefHeight="30.0" prefWidth="305.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="175.0" />
       <CheckBox fx:id="ckIsMember" layoutX="512.0" layoutY="181.0" mnemonicParsing="false" onAction="#setIsMember" text="Member" />
-      <Label layoutX="361.0" layoutY="410.0" prefHeight="30.0" text="Jadwal" AnchorPane.leftAnchor="370.0" />
-      <DatePicker fx:id="dpSewaDate" layoutX="196.0" layoutY="412.0" prefHeight="30.0" prefWidth="156.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="410.0" />
+      <Label layoutX="361.0" layoutY="410.0" prefHeight="30.0" text="Jadwal" AnchorPane.leftAnchor="370.0" AnchorPane.topAnchor="310.0" />
+      <DatePicker fx:id="dpSewaDate" layoutX="196.0" layoutY="412.0" prefHeight="30.0" prefWidth="156.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="310.0" />
       <Button layoutX="516.0" layoutY="509.0" mnemonicParsing="false" onAction="#printHandler" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #34eb67; -fx-background-radius: 7;" text="Print" textFill="WHITE" AnchorPane.bottomAnchor="21.0">
          <font>
             <Font name="System Bold" size="12.0" />

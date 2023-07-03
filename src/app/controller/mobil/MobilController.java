@@ -22,10 +22,12 @@ public class MobilController implements Initializable {
 
     public TableView<Mobil> tableMobil;
     public TableColumn<Mobil, Integer> id;
+//    public TableColumn<Mobil, Integer> sopirId;
     public TableColumn<Mobil, String> nopol;
     public TableColumn<Mobil, String> jenis;
     public TableColumn<Mobil, String> sopir;
     public TableColumn<Mobil, String> kelas;
+    public TableColumn<Mobil, String> jadwal;
     public TableColumn<Mobil, String> status;
 
     public Mobil selected;
@@ -33,9 +35,11 @@ public class MobilController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         id.setCellValueFactory(new PropertyValueFactory<Mobil, Integer>("id"));
+//        sopirId.setCellValueFactory(new PropertyValueFactory<Mobil, Integer>("id_sopir"));
         nopol.setCellValueFactory(new PropertyValueFactory<Mobil, String>("nopol"));
         jenis.setCellValueFactory(new PropertyValueFactory<Mobil, String>("jenis"));
         kelas.setCellValueFactory(new PropertyValueFactory<Mobil, String>("kelas"));
+        jadwal.setCellValueFactory(new PropertyValueFactory<Mobil, String>("jadwal"));
         status.setCellValueFactory(new PropertyValueFactory<Mobil, String>("status"));
         sopir.setCellValueFactory(new PropertyValueFactory<Mobil, String>("nama_sopir"));
 
@@ -70,7 +74,7 @@ public class MobilController implements Initializable {
             Scene scene = new Scene(root);
 
             EditMobilController emc = loader.getController();
-            emc.setField(selected.getId(),selected.getNopol(),selected.getJenis(),selected.getKelas(),selected.getStatus(),selected.getId_sopir());
+            emc.setField(selected.getId(),selected.getNopol(),selected.getJenis(),selected.getKelas(),selected.getJadwal(),selected.getStatus(),selected.getId_sopir());
 
             stage.setTitle("Edit Data Mobil");
             stage.setScene(scene);

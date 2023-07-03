@@ -19,11 +19,13 @@
                    AnchorPane.topAnchor="105.0">
             <columns>
                 <TableColumn fx:id="id" prefWidth="44.333335876464844" text="id"/>
-                <TableColumn fx:id="nopol" prefWidth="183.0" text="Nomor Polisi"/>
-                <TableColumn fx:id="jenis" prefWidth="211.0" text="Jenis"/>
-                <TableColumn fx:id="sopir" prefWidth="272.0" text="Sopir"/>
-                <TableColumn fx:id="kelas" minWidth="5.0" prefWidth="149.0" text="Kelas"/>
-                <TableColumn fx:id="status" minWidth="0.0" prefWidth="180.0" text="Status"/>
+                <TableColumn fx:id="nopol" prefWidth="143.6666717529297" text="Nomor Polisi"/>
+                <TableColumn fx:id="jenis" prefWidth="163.3333282470703" text="Jenis"/>
+                <TableColumn fx:id="sopir" prefWidth="167.33334350585938" text="Sopir"/>
+                <TableColumn fx:id="kelas" minWidth="5.0" prefWidth="167.0" text="Kelas"/>
+                <TableColumn fx:id="jadwal" minWidth="5.0" prefWidth="179.33331298828125" text="Jadwal"/>
+                <TableColumn fx:id="status" minWidth="0.0" prefWidth="163.66668701171875" text="Status"/>
+<!--                <TableColumn fx:id="sopirId" prefWidth="220.33331298828125" text="Sopir" visible="false"/>-->
             </columns>
         </TableView>
         <Label layoutX="21.0" layoutY="14.0" text="Mobil" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">

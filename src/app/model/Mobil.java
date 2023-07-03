@@ -6,19 +6,21 @@ public class Mobil {
     private String nopol;
     private String jenis;
     private String kelas;
+    private String jadwal;
     private String status;
     private int id_sopir;
     private String nama_sopir;
 
-    public Mobil(String nopol, String jenis, String kelas, String status, int id_sopir) {
+    public Mobil(String nopol, String jenis, String kelas, String jadwal, String status, int id_sopir) {
         this.nopol = nopol;
         this.jenis = jenis;
         this.kelas = kelas;
         this.status = status;
         this.id_sopir = id_sopir;
+        this.jadwal = jadwal;
     }
 
-    public Mobil(int id, String nopol, String jenis, String kelas, String status, int id_sopir) {
+    public Mobil(int id, String nopol, String jenis, String kelas, String jadwal, String status, int id_sopir) {
         this.id = id;
         this.nopol = nopol;
         this.jenis = jenis;
@@ -90,5 +92,13 @@ public class Mobil {
 
     public void setNama_sopir(String nama_sopir) {
         this.nama_sopir = nama_sopir;
+    }
+
+    public String getJadwal() {
+        return jadwal;
+    }
+
+    public void setJadwal(String jadwal) {
+        this.jadwal = jadwal;
     }
 }

@@ -16,13 +16,14 @@ public class MobilDAO implements daoInterface<Mobil>{
     public int addData(Mobil data) {
         int result = 0;
         try {
-            String query = "INSERT INTO mobil(nopol, jenis_mobil, kelas, status, id_sopir) VALUE (?,?,?,?,?)";
+            String query = "INSERT INTO mobil(nopol, jenis_mobil, kelas, jadwal, status, id_sopir) VALUE (?,?,?,?,?,?)";
             PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
             ps.setString(1, data.getNopol());
             ps.setString(2, data.getJenis());
             ps.setString(3, data.getKelas());
-            ps.setString(4, data.getStatus());
-            ps.setInt(5, data.getId_sopir());
+            ps.setString(4, data.getJadwal());
+            ps.setString(5, data.getStatus());
+            ps.setInt(6, data.getId_sopir());
             result = ps.executeUpdate();
         }catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -48,14 +49,15 @@ public class MobilDAO implements daoInterface<Mobil>{
     public int updateData(Mobil data) {
         int result = 0;
         try{
-            String query = "UPDATE mobil SET nopol=?, jenis_mobil=?, kelas=?, status=?, id_sopir=? WHERE id_mobil=?";
+            String query = "UPDATE mobil SET nopol=?, jenis_mobil=?, kelas=?, jadwal=?, status=?, id_sopir=? WHERE id_mobil=?";
             PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
             ps.setString(1, data.getNopol());
             ps.setString(2, data.getJenis());
             ps.setString(3, data.getKelas());
-            ps.setString(4, data.getStatus());
-            ps.setInt(5, data.getId_sopir());
-            ps.setInt(6, data.getId());
+            ps.setString(4, data.getJadwal());
+            ps.setString(5, data.getStatus());
+            ps.setInt(6, data.getId_sopir());
+            ps.setInt(7, data.getId());
             result = ps.executeUpdate();
         }catch (SQLException ex){
             System.out.println(ex.getMessage());
@@ -68,7 +70,7 @@ public class MobilDAO implements daoInterface<Mobil>{
         ObservableList<Mobil> mList = FXCollections.observableArrayList();
 
         try{
-            String query = "SELECT id_mobil, nopol, jenis_mobil, kelas, mobil.status, sopir.nama_sopir  \n" +
+            String query = "SELECT id_mobil, nopol, jenis_mobil, kelas, jadwal, mobil.status, sopir.nama_sopir, sopir.id_sopir  \n" +
                     "FROM mobil JOIN sopir \n" +
                     "ON mobil.id_sopir = sopir.id_sopir;";
             PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
@@ -76,9 +78,11 @@ public class MobilDAO implements daoInterface<Mobil>{
 
             while (res.next()){
                 int id = res.getInt("id_mobil");
+                int id_sopir = res.getInt("id_sopir");
                 String nopol = res.getString("nopol");
                 String jenis = res.getString("jenis_mobil");
                 String kelas = res.getString("kelas");
+                String jadwal = res.getString("jadwal");
                 String status = res.getString("mobil.status");
                 String nama_sopir = res.getString("nama_sopir");
 
@@ -87,8 +91,10 @@ public class MobilDAO implements daoInterface<Mobil>{
                 m.setNopol(nopol);
                 m.setJenis(jenis);
                 m.setKelas(kelas);
+                m.setJadwal(jadwal);
                 m.setStatus(status);
                 m.setNama_sopir(nama_sopir);
+                m.setId_sopir(id_sopir);
                 mList.add(m);
             }
 
@@ -141,10 +147,11 @@ public class MobilDAO implements daoInterface<Mobil>{
                 String nopol = res.getString("nopol");
                 String jenis = res.getString("jenis_mobil");
                 String mkelas = res.getString("kelas");
+                String jadwal = res.getString("jadwal");
                 String status = res.getString("status");
                 int id_sopir = res.getInt("id_sopir");
 
-                Mobil m = new Mobil(id, nopol, jenis, kelas, status, id_sopir);
+                Mobil m = new Mobil(id, nopol, jenis, kelas, jadwal, status, id_sopir);
                 data.add(m);
             }
 

@@ -110,7 +110,6 @@ public class SewaController implements Initializable{
     public void selectMobil(ActionEvent actionEvent) {
         String selectedMobil = cbMobil.getSelectionModel().getSelectedItem().toString();
         String nopol = selectedMobil.substring(0, selectedMobil.indexOf("|")-1);
-//        System.out.println(selectedMobil);
 
         ck1.setSelected(false);
         ck2.setSelected(false);
@@ -171,9 +170,6 @@ public class SewaController implements Initializable{
                 }
             }
         }
-        // 1. cek setiap checkbox
-        // 2. jika nilai checkbox terdapat dalam array kursi
-        //    disable checkbox
     }
 
     final String no_transaksi = UUID.randomUUID().toString();

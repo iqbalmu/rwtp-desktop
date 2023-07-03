@@ -29,6 +29,7 @@ public class AddMobilController implements Initializable {
     public TextField txtNopol;
     public ComboBox cbJenis;
     public ComboBox cbKelas;
+    public ComboBox cbJadwal;
     public ComboBox cbSopir;
     public ComboBox cbStatus;
 
@@ -38,33 +39,36 @@ public class AddMobilController implements Initializable {
         return listMobil;
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        ObservableList<String> lJenis = FXCollections.observableArrayList("Inova", "Reborn", "Panther");
+        ObservableList<String> lKelas = FXCollections.observableArrayList("Ekonomi", "Eksekutif");
+        ObservableList<String> lJadwal = FXCollections.observableArrayList("Pagi 10:00 WIB", "Siang 14:00 WIB", "Malam 20:00 WIB");
+        ObservableList<String> lStatus = FXCollections.observableArrayList("Ready", "Maintanance");
+
+        cbJenis.setItems(lJenis);
+        cbKelas.setItems(lKelas);
+        cbJadwal.setItems(lJadwal);
+        cbStatus.setItems(lStatus);
+        cbSopir.setItems(getDataSopir());
+
+    }
+
     public void insertDataMobil(ActionEvent actionEvent) {
         String nopol = txtNopol.getText();
         String jenis = cbJenis.getSelectionModel().getSelectedItem().toString();
         String kelas = cbKelas.getSelectionModel().getSelectedItem().toString();
+        String jadwal = cbJadwal.getSelectionModel().getSelectedItem().toString();
         Sopir sopir = (Sopir) cbSopir.getSelectionModel().getSelectedItem();
         String status = cbStatus.getSelectionModel().getSelectedItem().toString();
 
         MobilDAO mobilDAO = new MobilDAO();
-        mobilDAO.addData(new Mobil(nopol,jenis,kelas,status, sopir.getId_sopir()));
+        mobilDAO.addData(new Mobil(nopol, jenis, kelas, jadwal, status, sopir.getId_sopir()));
         listMobil = mobilDAO.showData();
 
         Node n = (Node) actionEvent.getSource();
         Stage stage = (Stage) n.getScene().getWindow();
         stage.close();
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<String> lJenis = FXCollections.observableArrayList("Inova", "Reborn", "Panther");
-        ObservableList<String> lKelas = FXCollections.observableArrayList("Ekonomi", "Eksekutif");
-        ObservableList<String> lStatus = FXCollections.observableArrayList("Ready", "Maintanance");
-
-        cbJenis.setItems(lJenis);
-        cbKelas.setItems(lKelas);
-        cbStatus.setItems(lStatus);
-        cbSopir.setItems(getDataSopir());
-
     }
 
     public ObservableList<Sopir> getDataSopir() {

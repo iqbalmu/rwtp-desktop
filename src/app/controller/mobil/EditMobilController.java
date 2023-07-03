@@ -25,6 +25,7 @@ public class EditMobilController implements Initializable {
     public TextField txtNopol;
     public ComboBox<String> cbJenis;
     public ComboBox<String> cbKelas;
+    public ComboBox<String> cbJadwal;
     public ComboBox<Sopir> cbSopir;
     public ComboBox<String> cbStatus;
 
@@ -35,13 +36,16 @@ public class EditMobilController implements Initializable {
     }
 
     public int id;
+    public int id_sopir;
 //    public int id_sopir;
 //    public String nopol, jenis, kelas, status;
-    public void setField(int id, String nopol, String jenis, String kelas, String status, int id_sopir) {
+    public void setField(int id, String nopol, String jenis, String kelas, String jadwal, String status, int id_sopir) {
         this.id = id;
+        this.id_sopir = id_sopir;
         this.txtNopol.setText(nopol);
         this.cbJenis.setValue(jenis);
         this.cbKelas.setValue(kelas);
+        this.cbJadwal.setValue(jadwal);
         this.cbStatus.setValue(status);
         this.cbSopir.setValue(getNamaSopir(id_sopir));
     }
@@ -50,10 +54,12 @@ public class EditMobilController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         ObservableList<String> lJenis = FXCollections.observableArrayList("Inova", "Reborn", "Panther");
         ObservableList<String> lKelas = FXCollections.observableArrayList("Ekonomi", "Eksekutif");
+        ObservableList<String> lJadwal = FXCollections.observableArrayList("Pagi 10:00 WIB", "Siang 14:00 WIB", "Malam 20:00 WIB");
         ObservableList<String> lStatus = FXCollections.observableArrayList("Ready", "Maintanance");
 
         cbJenis.setItems(lJenis);
         cbKelas.setItems(lKelas);
+        cbJadwal.setItems(lJadwal);
         cbStatus.setItems(lStatus);
         cbSopir.setItems(getDataSopir());
     }
@@ -62,11 +68,29 @@ public class EditMobilController implements Initializable {
         String nopol = txtNopol.getText();
         String jenis = cbJenis.getSelectionModel().getSelectedItem();
         String kelas = cbKelas.getSelectionModel().getSelectedItem();
+        String jadwal = cbJadwal.getSelectionModel().getSelectedItem();
         Sopir sopir = cbSopir.getSelectionModel().getSelectedItem();
+        int id_sopir = (sopir.getId_sopir() > 0) ? sopir.getId_sopir() : this.id_sopir;
         String status = cbStatus.getSelectionModel().getSelectedItem();
 
+        System.out.println(nopol);
+        System.out.println(jenis);
+        System.out.println(kelas);
+        System.out.println(jadwal);
+        System.out.println(id_sopir);
+        System.out.println(status);
+
+        Mobil mobil = new Mobil();
+        mobil.setId(id);
+        mobil.setNopol(nopol);
+        mobil.setJenis(jenis);
+        mobil.setKelas(kelas);
+        mobil.setJadwal(jadwal);
+        mobil.setId_sopir(id_sopir);
+        mobil.setStatus(status);
+
         MobilDAO mobilDAO = new MobilDAO();
-        int result = mobilDAO.updateData(new Mobil(id, nopol, jenis, kelas, status, sopir.getId_sopir()));
+        int result = mobilDAO.updateData(mobil);
 
         if (result != 0) {
             System.out.println("Update Succes");
