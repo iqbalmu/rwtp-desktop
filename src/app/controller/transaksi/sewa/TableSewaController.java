@@ -10,6 +10,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class TableSewaController implements Initializable {
@@ -22,6 +23,7 @@ public class TableSewaController implements Initializable {
     public TableColumn<Sewa, String> kursi;
     public TableColumn<Sewa, String> tujuan;
     public TableColumn<Sewa, Timestamp> date;
+    public TableColumn<Sewa, Date> sewaDate;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -29,6 +31,7 @@ public class TableSewaController implements Initializable {
         no_transaksi.setCellValueFactory(new PropertyValueFactory<Sewa, String>("no_transaksi"));
         nama_pelanggan.setCellValueFactory(new PropertyValueFactory<Sewa, String>("id_pelanggan"));
         nopol.setCellValueFactory(new PropertyValueFactory<Sewa, String>("nopol"));
+        sewaDate.setCellValueFactory(new PropertyValueFactory<Sewa, Date>("sewa_date"));
         jadwal.setCellValueFactory(new PropertyValueFactory<Sewa, String>("jadwal"));
         kursi.setCellValueFactory(new PropertyValueFactory<Sewa, String>("kursi"));
         tujuan.setCellValueFactory(new PropertyValueFactory<Sewa, String>("tujuan"));

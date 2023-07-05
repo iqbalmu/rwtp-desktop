@@ -1,12 +1,13 @@
 package app.dao;
 
-import app.model.transaksi.Rental;
 import app.model.transaksi.Sewa;
 import app.utility.JDBCConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -44,24 +45,27 @@ public class SewaDAO implements daoInterface<Sewa> {
         return result;
     }
 
-    public List<String> getKursiAvailable(String nopol) {
+    public ArrayList<String> getKursiAvailable(String nopol, LocalDate sewaDate) {
         List<String> data = null;
+        ArrayList<String> result = new ArrayList<>();
 
         try{
-            String query = "SELECT kursi FROM  sewa_transaksi WHERE nopol=?";
+            String query = "SELECT kursi FROM  sewa_transaksi WHERE nopol=? AND sewa_date=?";
             PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
             ps.setString(1, nopol);
+            ps.setDate(2, Date.valueOf(sewaDate));
             ResultSet res = ps.executeQuery();
 
             while (res.next()){
                 String kursis = res.getString("kursi").replace("[", "").replace("]","");
-                data = Arrays.asList(kursis.split("\\s*,\\s*"));
+//                data = Arrays.asList(kursis.split("\\s*,\\s*"));
+                result.add(kursis);
             }
 
         }catch (SQLException ex){
             System.out.println(ex.getMessage());
         }
-        return data;
+        return result;
     }
 
     @Override
@@ -78,7 +82,7 @@ public class SewaDAO implements daoInterface<Sewa> {
     public ObservableList<Sewa> showData() {
         ObservableList<Sewa> lSewa = FXCollections.observableArrayList();
         try{
-            String query = "SELECT `date`, no_transaksi, nopol, jadwal, kursi, tujuan, pelanggan.nama FROM sewa_transaksi st JOIN pelanggan ON st.id_pelanggan = pelanggan.id_pelanggan;";
+            String query = "SELECT `date`, no_transaksi, nopol,sewa_date, jadwal, kursi, tujuan, pelanggan.nama FROM sewa_transaksi st JOIN pelanggan ON st.id_pelanggan = pelanggan.id_pelanggan;";
             PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
             ResultSet res = ps.executeQuery();
 
@@ -90,6 +94,7 @@ public class SewaDAO implements daoInterface<Sewa> {
                 String jadwal = res.getString("jadwal");
                 String kursi = res.getString("kursi");
                 String tujuan = res.getString("tujuan");
+                Date sewa_date = res.getDate("sewa_date");
 
                 Sewa sewa = new Sewa();
                 sewa.setDate(date);
@@ -99,6 +104,7 @@ public class SewaDAO implements daoInterface<Sewa> {
                 sewa.setJadwal(jadwal);
                 sewa.setKursi(kursi);
                 sewa.setTujuan(tujuan);
+                sewa.setSewa_date(sewa_date);
 
                 lSewa.add(sewa);
             }

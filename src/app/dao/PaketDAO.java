@@ -26,10 +26,10 @@ public class PaketDAO implements daoInterface<Paket> {
                 ps.setString(4, data.getHpPengirim());
                 ps.setString(5, data.getNamaPenerima());
                 ps.setString(6, data.getHpPenerima());
-                ps.setString(7, data.getAlamatPenerima());
+                ps.setString(7, data.getTujuan());
                 ps.setInt(8, data.getKuantitas());
                 ps.setInt(9, data.getBayar());
-                ps.setString(10, data.getKeterangan());
+                ps.setString(10, data.getStatus());
                 ps.setTimestamp(11, data.getDate());
                 result = ps.executeUpdate();
             }
@@ -64,7 +64,11 @@ public class PaketDAO implements daoInterface<Paket> {
                 int id = res.getInt("id_paket");
                 String nopol = res.getString("nopol");
                 String pengirim = res.getString("nama_pengirim");
+                String hpPengirim = res.getString("hp_pengirim");
                 String penerima = res.getString("nama_penerima");
+                String hpPenerima = res.getString("hp_penerima");
+                String tujuan = res.getString("tujuan");
+                String status = res.getString("status");
 
                 Paket paket = new Paket();
                 paket.setId(id);
@@ -72,6 +76,10 @@ public class PaketDAO implements daoInterface<Paket> {
                 paket.setNamaPenerima(penerima);
                 paket.setNamaPengirim(pengirim);
                 paket.setDate(date);
+                paket.setHpPengirim(hpPengirim);
+                paket.setHpPenerima(hpPenerima);
+                paket.setTujuan(tujuan);
+                paket.setStatus(status);
                 pList.add(paket);
             }
 

@@ -1,7 +1,5 @@
 package app.controller.transaksi.sewa;
 
-import app.Main;
-import app.controller.transaksi.rental.DetailRentalController;
 import app.dao.MobilDAO;
 import app.dao.PelangganDAO;
 import app.dao.SewaDAO;
@@ -31,7 +29,7 @@ import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.*;
 
-public class SewaController implements Initializable{
+public class SewaController implements Initializable {
 
     public ComboBox<String> cbIdentitas;
     public ComboBox<String> cbClass;
@@ -60,69 +58,104 @@ public class SewaController implements Initializable{
         cbJadwal.setItems(listJadwal);
 
         txtIdentitas.setDisable(true);
-
-        ck1.setOnAction(e -> {
-            lCkursi.add(ck1.getText());
-        });
-        ck2.setOnAction(e -> {
-            lCkursi.add(ck2.getText());
-        });
-        ck3.setOnAction(e -> {
-            lCkursi.add(ck3.getText());
-        });
-        ck4.setOnAction(e -> {
-            lCkursi.add(ck5.getText());
-        });
-        ck5.setOnAction(e -> {
-            lCkursi.add(ck5.getText());
-        });
-        ck6.setOnAction(e -> {
-            lCkursi.add(ck6.getText());
-        });
-        ckcc.setOnAction(e -> {
-            lCkursi.add(ckcc.getText());
-        });
     }
 
-    public ObservableList<Mobil> getMobil(String kelas){
+    public ObservableList<Mobil> getMobil(String kelas) {
         ObservableList<Mobil> mobils;
         MobilDAO mobilDAO = new MobilDAO();
         mobils = mobilDAO.getMobilAvailable(kelas);
         return mobils;
     }
 
-    public List<String> getKursi(String nopol) {
+    public List<String> getKursi(String nopol, LocalDate sewaDate) {
         List<String> kursis;
+
         SewaDAO sewaDAO = new SewaDAO();
-        kursis = sewaDAO.getKursiAvailable(nopol);
-        if (kursis != null){
+        kursis = sewaDAO.getKursiAvailable(nopol, sewaDate);
+
+//        System.out.println("avai: " + kursis);
+
+        if (kursis != null) {
             return kursis;
-        }else{
+        } else {
             return kursis = List.of("");
         }
     }
 
     public void selectClass(ActionEvent actionEvent) {
+        cbMobil.setValue(null);
+        resetCbKursi();
         String selectedClass = cbClass.getValue();
         cbMobil.setItems(getMobil(selectedClass));
     }
 
+    public void resetCbKursi() {
+        ck1.setSelected(false);
+        ck1.setDisable(false);
+        ck2.setSelected(false);
+        ck2.setDisable(false);
+        ck3.setSelected(false);
+        ck3.setDisable(false);
+        ck4.setSelected(false);
+        ck4.setDisable(false);
+        ck5.setSelected(false);
+        ck5.setDisable(false);
+        ck6.setSelected(false);
+        ck6.setDisable(false);
+        ckcc.setSelected(false);
+        ckcc.setDisable(false);
+    }
+
     public void selectMobil(ActionEvent actionEvent) {
         String selectedMobil = cbMobil.getSelectionModel().getSelectedItem().toString();
-        String nopol = selectedMobil.substring(0, selectedMobil.indexOf("|")-1);
+        String nopol = selectedMobil.substring(0, selectedMobil.indexOf("|") - 1);
+        LocalDate sewaDate = dpSewaDate.getValue();
 
-        ck1.setSelected(false);
-        ck2.setSelected(false);
-        ck3.setSelected(false);
-        ck4.setSelected(false);
-        ck5.setSelected(false);
-        ck6.setSelected(false);
-        ckcc.setSelected(false);
+        resetCbKursi();
 
-        System.out.println();
-        System.out.println(getKursi(nopol));
-        List<String> kursis =  getKursi(nopol);
-        for (String kursi : kursis) {
+        ck1.setOnAction(e -> {
+            if (ck1.isSelected()) {
+                lCkursi.add(ck1.getText());
+            }
+        });
+        ck2.setOnAction(e -> {
+            if (ck2.isSelected()) {
+                lCkursi.add(ck2.getText());
+            }
+        });
+        ck3.setOnAction(e -> {
+            if (ck3.isSelected()) {
+                lCkursi.add(ck3.getText());
+            }
+        });
+        ck4.setOnAction(e -> {
+            if (ck4.isSelected()) {
+                lCkursi.add(ck4.getText());
+            }
+        });
+        ck5.setOnAction(e -> {
+            if (ck5.isSelected()) {
+                lCkursi.add(ck5.getText());
+            }
+        });
+        ck6.setOnAction(e -> {
+            if (ck6.isSelected()) {
+                lCkursi.add(ck6.getText());
+            }
+        });
+        ckcc.setOnAction(e -> {
+            if (ckcc.isSelected()) {
+                lCkursi.add(ckcc.getText());
+            }
+        });
+
+        System.out.println(getKursi(nopol, sewaDate));
+        List<String> kursis = getKursi(nopol, sewaDate);
+        String chs = kursis.toString().replace("[", "").replace("]","");
+        String[] chairs = chs.split(", ");
+
+        for (String kursi : chairs) {
+            System.out.println(kursi);
             switch (kursi) {
                 case "1" -> {
                     ck1.setSelected(true);
@@ -148,31 +181,32 @@ public class SewaController implements Initializable{
                     ck6.setSelected(true);
                     ck6.setDisable(true);
                 }
-                case "cc" -> {
+                case "CC" -> {
                     ckcc.setSelected(true);
                     ckcc.setDisable(true);
                 }
                 default -> {
-                    ck1.setSelected(false);
-                    ck1.setDisable(false);
-                    ck2.setSelected(false);
-                    ck2.setDisable(false);
-                    ck3.setSelected(false);
-                    ck3.setDisable(false);
-                    ck4.setSelected(false);
-                    ck4.setDisable(false);
-                    ck5.setSelected(false);
-                    ck5.setDisable(false);
-                    ck6.setSelected(false);
-                    ck6.setDisable(false);
-                    ckcc.setSelected(false);
-                    ckcc.setDisable(false);
+//                    ck1.setSelected(false);
+//                    ck1.setDisable(false);
+//                    ck2.setSelected(false);
+//                    ck2.setDisable(false);
+//                    ck3.setSelected(false);
+//                    ck3.setDisable(false);
+//                    ck4.setSelected(false);
+//                    ck4.setDisable(false);
+//                    ck5.setSelected(false);
+//                    ck5.setDisable(false);
+//                    ck6.setSelected(false);
+//                    ck6.setDisable(false);
+//                    ckcc.setSelected(false);
+//                    ckcc.setDisable(false);
                 }
             }
         }
     }
 
     final String no_transaksi = UUID.randomUUID().toString();
+
     public void saveHandler(ActionEvent actionEvent) throws IOException {
         System.out.println("Store");
 
@@ -181,10 +215,10 @@ public class SewaController implements Initializable{
         String nama = txtNama.getText();
         String kategori = cbIdentitas.getSelectionModel().getSelectedItem();
         String nmobil = cbMobil.getSelectionModel().getSelectedItem().toString();
-        String nopol = nmobil.substring(0, nmobil.indexOf("|")-1);
+        String nopol = nmobil.substring(0, nmobil.indexOf("|") - 1);
         LocalDate sewa_date = dpSewaDate.getValue();
         String kelas = cbClass.getValue();
-        double harga = checkHarga(kategori,kelas, isMember);
+        double harga = checkHarga(kategori, kelas, isMember);
         int user = UserInfo.id_user;
 
         Pelanggan pelanggan = new Pelanggan(
@@ -195,27 +229,20 @@ public class SewaController implements Initializable{
                 txtAlamat.getText(),
                 isMember
         );
-        System.out.println("Set model pelanggan success");
-//        System.out.println(id_pelanggan);
-//        System.out.println(txtNama.getText());
-//        System.out.println(txtPhone.getText());
-//        System.out.println(cbIdentitas.getSelectionModel().getSelectedItem());
-//        System.out.println(txtAlamat.getText());
-//        System.out.println(isMember);
 
         PelangganDAO pelangganDAO = new PelangganDAO();
         pelangganDAO.addData(pelanggan);
 
-        System.out.println("Store data pelanggan success");
-
         // 2. Store data sewa
+        HashSet<String> uniqueValues = new HashSet<>(lCkursi);
+        lCkursi.setAll(uniqueValues);
 
         // confirm data
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/xml/transaksi/sewa/DetailTransaksiSewa.fxml"));
         Parent root = loader.load();
         DetailSewaController dsc = loader.getController();
-        dsc.setField(UserInfo.username,new Timestamp(new Date().getTime()).toString(), nama, sewa_date.toString(), kelas, nopol, txtPhone.getText(),lCkursi.toString(),String.valueOf(harga) ,txtAlamat.getText(),cbJadwal.getSelectionModel().getSelectedItem());
+        dsc.setField(UserInfo.username, new Timestamp(new Date().getTime()).toString(), nama, sewa_date.toString(), kelas, nopol, txtPhone.getText(), lCkursi.toString(), String.valueOf(harga), txtAlamat.getText(), cbJadwal.getSelectionModel().getSelectedItem());
 
         Scene scene = new Scene(root);
         stage.setTitle("Confirm Data");
@@ -252,9 +279,8 @@ public class SewaController implements Initializable{
 
         SewaDAO sewaDAO = new SewaDAO();
         sewaDAO.addData(sewa);
-//        System.out.println("store data sewa success");
-//
-//        // 3. Set Status mobil to beroperasi
+
+        // 3. Set Status mobil to beroperasi
         MobilDAO mobilDAO = new MobilDAO();
 //        // jika kursi belum penuh, jam < dari jadwal set status "ready"
 //        // jika kursi penuh set status mobil "sewa"
@@ -268,15 +294,18 @@ public class SewaController implements Initializable{
 //        main.changeScene("view/xml/main.fxml");
     }
 
-    public double checkHarga(String kategori,String kelas, boolean isMember) {
+    public double checkHarga(String kategori, String kelas, boolean isMember) {
+        HashSet<String> uniqueValues = new HashSet<>(lCkursi);
+        lCkursi.setAll(uniqueValues);
+
         // cek kelas, kategori, isMember
         double kHarga = (kelas == "Eksekutif") ? 220_000 : 180_000;
-        double harga = (kategori == "mahasiswa") ? ((kHarga -20_000)* lCkursi.size()) : kHarga * lCkursi.size();
+        double harga = (kategori == "mahasiswa") ? ((kHarga - 20_000) * lCkursi.size()) : kHarga * lCkursi.size();
 
-        if(isMember){
+        if (isMember) {
             harga = (harga * lCkursi.size()) - harga;
             return harga;
-        }else{
+        } else {
             return harga;
         }
     }
@@ -303,8 +332,15 @@ public class SewaController implements Initializable{
             JasperExportManager.exportReportToPdfFile(jasperPrint, pdfFileName);
             // View the generated report
             JasperViewer.viewReport(jasperPrint, false);
-        }catch (JRException e){
+        } catch (JRException e) {
             e.printStackTrace();
         }
+    }
+
+    public void dpAction(ActionEvent actionEvent) {
+        cbMobil.setValue(null);
+        cbJadwal.setValue(null);
+        cbClass.setValue(null);
+        resetCbKursi();
     }
 }

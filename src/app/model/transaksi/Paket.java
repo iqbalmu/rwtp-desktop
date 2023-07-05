@@ -10,23 +10,23 @@ public class Paket {
     private String hpPengirim;
     private String namaPenerima;
     private String hpPenerima;
-    private String alamatPenerima;
+    private String tujuan;
     private int kuantitas;
     private int bayar;
-    private String keterangan;
+    private String status;
     private Timestamp date;
 
-    public Paket(String noTransaksi,String nopol, String namaPengirim, String hpPengirim, String namaPenerima, String hpPenerima, String alamatPenerima, int kuantitas, int bayar, String keterangan, Timestamp date) {
+    public Paket(String noTransaksi, String nopol, String namaPengirim, String hpPengirim, String namaPenerima, String hpPenerima, String tujuan, int kuantitas, int bayar, String status, Timestamp date) {
         this.noTransaksi = noTransaksi;
         this.nopol = nopol;
         this.namaPengirim = namaPengirim;
         this.hpPengirim = hpPengirim;
         this.namaPenerima = namaPenerima;
         this.hpPenerima = hpPenerima;
-        this.alamatPenerima = alamatPenerima;
+        this.tujuan = tujuan;
         this.kuantitas = kuantitas;
         this.bayar = bayar;
-        this.keterangan = keterangan;
+        this.status = status;
         this.date = date;
     }
 
@@ -90,12 +90,12 @@ public class Paket {
         this.hpPenerima = hpPenerima;
     }
 
-    public String getAlamatPenerima() {
-        return alamatPenerima;
+    public String getTujuan() {
+        return tujuan;
     }
 
-    public void setAlamatPenerima(String alamatPenerima) {
-        this.alamatPenerima = alamatPenerima;
+    public void setTujuan(String tujuan) {
+        this.tujuan = tujuan;
     }
 
     public int getKuantitas() {
@@ -114,12 +114,12 @@ public class Paket {
         this.bayar = bayar;
     }
 
-    public String getKeterangan() {
-        return keterangan;
+    public String getStatus() {
+        return status;
     }
 
-    public void setKeterangan(String keterangan) {
-        this.keterangan = keterangan;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Timestamp getDate() {

@@ -55,7 +55,7 @@
       <TextField fx:id="txtIdentitas" layoutX="192.0" layoutY="175.0" prefHeight="30.0" prefWidth="305.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="175.0" />
       <CheckBox fx:id="ckIsMember" layoutX="512.0" layoutY="181.0" mnemonicParsing="false" onAction="#setIsMember" text="Member" />
       <Label layoutX="361.0" layoutY="410.0" prefHeight="30.0" text="Jadwal" AnchorPane.leftAnchor="370.0" AnchorPane.topAnchor="310.0" />
-      <DatePicker fx:id="dpSewaDate" layoutX="196.0" layoutY="412.0" prefHeight="30.0" prefWidth="156.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="310.0" />
+      <DatePicker fx:id="dpSewaDate" layoutX="196.0" layoutY="412.0" onAction="#dpAction" prefHeight="30.0" prefWidth="156.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="310.0" />
       <Button layoutX="516.0" layoutY="509.0" mnemonicParsing="false" onAction="#printHandler" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #34eb67; -fx-background-radius: 7;" text="Print" textFill="WHITE" AnchorPane.bottomAnchor="21.0">
          <font>
             <Font name="System Bold" size="12.0" />

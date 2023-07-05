@@ -59,7 +59,6 @@ public class PaketController implements Initializable {
         String alamatPenerima = alamat_penerima.getText();
         int kuantitasTxt = Integer.parseInt(kuantitas.getText());
         int bayar = 30000 * kuantitasTxt; // untuk harga nanti dinamis dari database tabel harga
-        String keterangan = "";
         Timestamp date = new Timestamp(new Date().getTime());
 
         //confirm data
@@ -93,7 +92,7 @@ public class PaketController implements Initializable {
             System.out.println("Lengkapi Data Paket");
         }else{
             PaketDAO paketDAO = new PaketDAO();
-            paketDAO.addData(new Paket(noTransaksi, nopol, namaPengirim, hpPengirim, namaPenerima,hpPenerima, alamatPenerima, kuantitasTxt, bayar, keterangan, date));
+            paketDAO.addData(new Paket(noTransaksi, nopol, namaPengirim, hpPengirim, namaPenerima,hpPenerima, alamatPenerima, kuantitasTxt, bayar, "Dikirim", date));
         }
 
 //        back to AllTransaction;

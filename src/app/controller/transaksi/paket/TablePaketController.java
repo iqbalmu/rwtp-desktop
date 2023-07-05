@@ -20,14 +20,22 @@ public class TablePaketController implements Initializable {
     public TableColumn<Paket, String> penerima;
     public TableColumn<Paket, String> nopol;
     public TableColumn<Paket, Timestamp> date;
+    public TableColumn<Paket, String> hpPengirim;
+    public TableColumn<Paket, String> hpPenerima;
+    public TableColumn<Paket, String> tujuan;
+    public TableColumn<Paket, String> status;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        date.setCellValueFactory(new PropertyValueFactory<Paket, Timestamp>("date"));
         id.setCellValueFactory(new PropertyValueFactory<Paket, Integer>("id"));
-        pengirim.setCellValueFactory(new PropertyValueFactory<Paket, String>("namaPengirim"));
-        penerima.setCellValueFactory(new PropertyValueFactory<Paket, String>("namaPenerima"));
+        date.setCellValueFactory(new PropertyValueFactory<Paket, Timestamp>("date"));
         nopol.setCellValueFactory(new PropertyValueFactory<Paket, String>("nopol"));
+        pengirim.setCellValueFactory(new PropertyValueFactory<Paket, String>("namaPengirim"));
+        hpPengirim.setCellValueFactory(new PropertyValueFactory<Paket, String>("hpPengirim"));
+        penerima.setCellValueFactory(new PropertyValueFactory<Paket, String>("namaPenerima"));
+        hpPenerima.setCellValueFactory(new PropertyValueFactory<Paket, String>("hpPenerima"));
+        tujuan.setCellValueFactory(new PropertyValueFactory<Paket, String>("tujuan"));
+        status.setCellValueFactory(new PropertyValueFactory<Paket, String>("status"));
 
         PaketDAO paketDAO = new PaketDAO();
         ObservableList<Paket> pakets = paketDAO.showData();
