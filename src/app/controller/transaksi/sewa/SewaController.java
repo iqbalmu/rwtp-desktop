@@ -1,5 +1,6 @@
 package app.controller.transaksi.sewa;
 
+import app.Main;
 import app.dao.MobilDAO;
 import app.dao.PelangganDAO;
 import app.dao.SewaDAO;
@@ -289,9 +290,9 @@ public class SewaController implements Initializable {
         // update status to sewa jika kursi dengan nopol XXXX == max_kursi
 //        mobilDAO.updateStatus("Sewa", nopol);
 
-//        // 4. back to home
+//      // 4. back to home
 //        Main main = new Main();
-//        main.changeScene("view/xml/main.fxml");
+//        main.changeScene("view/xml/sewa/SewaTransaksi.fxml");
     }
 
     public double checkHarga(String kategori, String kelas, boolean isMember) {

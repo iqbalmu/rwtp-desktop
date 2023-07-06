@@ -5,6 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class RentalDAO implements daoInterface<Rental> {
 
@@ -55,7 +56,7 @@ public class RentalDAO implements daoInterface<Rental> {
     public ObservableList<Rental> showData() {
         ObservableList<Rental> rList = FXCollections.observableArrayList();
         try{
-            String query = "SELECT `date`, no_transaksi, nopol, rental_date, return_date, pelanggan.nama FROM rental_transaksi rt JOIN pelanggan ON rt.id_pelanggan = pelanggan.id_pelanggan;";
+            String query = "SELECT `date`, no_transaksi,bayar, nopol, denda, keterangan, rental_date, return_date,actual_return, pelanggan.nama FROM rental_transaksi rt JOIN pelanggan ON rt.id_pelanggan = pelanggan.id_pelanggan;";
             PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
             ResultSet res = ps.executeQuery();
 
@@ -65,7 +66,12 @@ public class RentalDAO implements daoInterface<Rental> {
                 String nopol = res.getString("nopol");
                 Date rental_date = res.getDate("rental_date");
                 Date return_date = res.getDate("return_date");
+                Date actual_return = res.getDate("actual_return");
                 String nama = res.getString("nama");
+                int bayar = res.getInt("bayar");
+                int denda = res.getInt("denda");
+                String keterangan = res.getString("keterangan");
+
 
                 Rental rental = new Rental();
                 rental.setDate(date);
@@ -74,6 +80,10 @@ public class RentalDAO implements daoInterface<Rental> {
                 rental.setRental_date(rental_date);
                 rental.setReturn_date(return_date);
                 rental.setId_pelanggan(nama);
+                rental.setBayar(bayar);
+                rental.setDenda(denda);
+                rental.setKeterangan(keterangan);
+                rental.setActual_return(actual_return);
 
                 rList.add(rental);
             }
@@ -82,5 +92,21 @@ public class RentalDAO implements daoInterface<Rental> {
             System.out.println(ex.getMessage());
         }
         return rList;
+    }
+
+    public int updateReturn(String denda, String keterangan, Date date, String noTransaksi) {
+        int result = 0;
+        try{
+            String query = "UPDATE rental_transaksi SET denda=?, keterangan=?, actual_return=? WHERE no_transaksi=?";
+            PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
+            ps.setString(1, denda);
+            ps.setString(2, keterangan);
+            ps.setDate(3, date);
+            ps.setString(4, noTransaksi);
+            result = ps.executeUpdate();
+        }catch (SQLException ex){
+            System.out.println(ex.getMessage());
+        }
+        return result;
     }
 }

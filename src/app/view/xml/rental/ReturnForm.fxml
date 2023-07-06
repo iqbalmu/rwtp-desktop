@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="397.0" prefWidth="496.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.rental.ReturnFormController">
+   <children>
+      <Pane layoutX="-4.0" layoutY="-3.0" prefHeight="35.0" prefWidth="375.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      </Pane>
+      <Label layoutX="26.0" layoutY="82.0" text="Waktu Pinjam" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="82.0" />
+      <Label layoutX="26.0" layoutY="52.0" text="Nopol" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="52.0" />
+
+      <Label fx:id="txtPinjamDate" layoutX="146.0" layoutY="82.0" text="23/2/2023" AnchorPane.leftAnchor="146.0" AnchorPane.topAnchor="82.0" />
+
+      <Label fx:id="txtNopol" layoutX="146.0" layoutY="52.0" text="BA 2123 EP" AnchorPane.leftAnchor="146.0" AnchorPane.topAnchor="52.0" />
+
+      <Label layoutX="26.0" layoutY="112.0" text="Waktu Kembali" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="112.0" />
+      <Label fx:id="txtBalikDate" layoutX="146.0" layoutY="112.0" text="27/2/2023" AnchorPane.leftAnchor="146.0" AnchorPane.topAnchor="112.0" />
+      <Label layoutX="28.0" layoutY="324.0" text="Total : Rp. " AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="28.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Label fx:id="txtTotal" layoutX="121.0" layoutY="352.0" text="100,000" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="121.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Label layoutX="136.0" layoutY="82.0" text=":" AnchorPane.leftAnchor="136.0" AnchorPane.topAnchor="82.0" />
+      <Label layoutX="136.0" layoutY="112.0" text=":" AnchorPane.leftAnchor="136.0" AnchorPane.topAnchor="112.0" />
+      <Label layoutX="136.0" layoutY="52.0" text=":" AnchorPane.leftAnchor="136.0" AnchorPane.topAnchor="52.0" />
+      <Button layoutX="412.0" layoutY="324.0" mnemonicParsing="false" onAction="#okeHandler" prefHeight="26.0" prefWidth="57.0" text="oke" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="27.0" />
+      <Button layoutX="342.0" layoutY="324.0" mnemonicParsing="false" onAction="#cancelHandler" text="cancel" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="97.0" />
+      <Label layoutX="26.0" layoutY="142.0" text="Terlambat" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="142.0" />
+      <Label fx:id="txtTerlambat" layoutX="146.0" layoutY="142.0" text="1" AnchorPane.leftAnchor="146.0" AnchorPane.topAnchor="142.0" />
+      <Label layoutX="136.0" layoutY="142.0" text=":" AnchorPane.leftAnchor="136.0" AnchorPane.topAnchor="142.0" />
+      <Label layoutX="165.0" layoutY="142.0" text="Hari" AnchorPane.leftAnchor="165.0" AnchorPane.topAnchor="142.0" />
+      <Label layoutX="20.0" layoutY="240.0" text="Denda" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="190.0" />
+      <Label fx:id="txtDenda" layoutX="167.0" layoutY="235.0" text="10000" AnchorPane.leftAnchor="167.0" AnchorPane.topAnchor="190.0" />
+      <Label layoutX="130.0" layoutY="240.0" text=":" AnchorPane.leftAnchor="136.0" AnchorPane.topAnchor="190.0" />
+      <Label layoutX="141.0" layoutY="235.0" text="Rp." AnchorPane.leftAnchor="145.0" AnchorPane.topAnchor="190.0" />
+      <Label layoutX="23.0" layoutY="260.0" text="Keterangan" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="220.0" />
+      <Label layoutX="133.0" layoutY="260.0" text=":" AnchorPane.leftAnchor="136.0" AnchorPane.topAnchor="220.0" />
+      <TextArea fx:id="taKeterangan" layoutX="144.0" layoutY="260.0" prefHeight="79.0" prefWidth="325.0" wrapText="true" AnchorPane.leftAnchor="146.0" AnchorPane.topAnchor="220.0" />
+      <Label layoutX="26.0" layoutY="167.0" text="Biaya" />
+      <Label fx:id="txtBiaya" layoutX="167.0" layoutY="167.0" text="10000" />
+      <Label layoutX="136.0" layoutY="167.0" text=":" />
+      <Label layoutX="145.0" layoutY="167.0" text="Rp." />
+   </children>
+</AnchorPane>

@@ -1,0 +1,4 @@
+Button:hover {
+    -fx-text-fill: white;
+    -fx-font-size: 1.2em;
+}

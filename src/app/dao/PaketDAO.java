@@ -18,7 +18,7 @@ public class PaketDAO implements daoInterface<Paket> {
                 ps.executeUpdate();
             }
 
-            try(PreparedStatement ps = JDBCConnection.getConnection().prepareStatement("INSERT INTO paket(no_transaksi, nopol, nama_pengirim, hp_pengirim, nama_penerima, hp_penerima, tujuan, kuantitas, bayar, keterangan, date) VALUE (?,?,?,?,?,?,?,?,?,?,?)")) {
+            try(PreparedStatement ps = JDBCConnection.getConnection().prepareStatement("INSERT INTO paket(no_transaksi, nopol, nama_pengirim, hp_pengirim, nama_penerima, hp_penerima, tujuan, kuantitas, bayar, status, date) VALUE (?,?,?,?,?,?,?,?,?,?,?)")) {
 
                 ps.setString(1, data.getNoTransaksi());
                 ps.setString(2, data.getNopol());
@@ -88,5 +88,21 @@ public class PaketDAO implements daoInterface<Paket> {
         }
 
         return pList;
+    }
+
+    public int updateStatus(String status, int id){
+        int result = 0;
+
+        try{
+            String query = "UPDATE paket SET status=? WHERE id_paket=?";
+            PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
+            ps.setString(1, status);
+            ps.setInt(2, id);
+            result = ps.executeUpdate();
+        }catch (SQLException ex){
+            System.out.println(ex.getMessage());
+        }
+
+        return result;
     }
 }

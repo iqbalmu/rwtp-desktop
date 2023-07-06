@@ -1,10 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ScrollPane prefHeight="650.0" prefWidth="1080.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <ImageView fitHeight="329.0" fitWidth="329.0" layoutX="370.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../asset/image/reginaLogo.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="276.0" layoutY="368.0" text="Regina Wisata Transport">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Label>
+      <Separator layoutX="108.0" layoutY="494.0" prefWidth="880.0" style="-fx-background-color: black;" />
+      <Pane layoutX="58.0" layoutY="529.0" prefHeight="159.0" prefWidth="293.0" style="-fx-background-color: #AABDEE; -fx-background-radius: 10;">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="77.0" layoutX="185.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../asset/image/car.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="19.0" layoutY="116.0" text="Total mobil yang tersedia">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="33.0" layoutY="25.0" prefHeight="89.0" prefWidth="0.0" text="5">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Label>
+            <Separator layoutX="2.0" layoutY="104.0" prefHeight="2.0" prefWidth="291.0" style="-fx-background-color: black;" />
+            <Label layoutX="16.0" layoutY="15.0" text="Ready">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="146.0" layoutY="449.0" text="selamat Datang di RWT. Sistem aplikasi Rental, Sewa, dan Antar Paket. Dikembangkan oleh Uhuy Team">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Pane layoutX="412.0" layoutY="529.0" prefHeight="159.0" prefWidth="293.0" style="-fx-background-color: #E65555; -fx-background-radius: 10;">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="77.0" layoutX="188.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../asset/image/maintenance.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="35.0" layoutY="32.0" prefHeight="89.0" prefWidth="0.0" text="2">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="16.0" text="Maintenance">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Separator layoutX="1.0" layoutY="105.0" prefHeight="2.0" prefWidth="291.0" style="-fx-background-color: black;" />
+            <Label layoutX="15.0" layoutY="118.0" text="Total mobil yang tidak tersedia">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Pane layoutX="743.0" layoutY="529.0" prefHeight="159.0" prefWidth="293.0" style="-fx-background-color: #5871CA; -fx-background-radius: 10;">
+         <children>
+            <ImageView fitHeight="77.0" fitWidth="75.0" layoutX="191.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../asset/image/money.png" />
+               </image>
+            </ImageView>
+            <Separator layoutX="2.0" layoutY="104.0" prefHeight="2.0" prefWidth="291.0" style="-fx-background-color: black;" />
+            <Label layoutX="19.0" layoutY="14.0" text="Omset">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="53.0" text="Rp.8.000.000" textFill="#20cd27">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="9.0" layoutY="119.0" text="Total pendapatan pada bulan ini">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children></Pane>
    </children>
 </AnchorPane>

@@ -24,6 +24,9 @@ public class MainController {
 
     public AnchorPane contentPane;
     public AnchorPane home;
+    public Button rentalBtn;
+    public Button paketBtn;
+    public Button sewaBtn;
 
     public void setNode(Node node){
         contentPane.getChildren().clear();
@@ -64,7 +67,34 @@ public class MainController {
 
     public void transaksiHandler(ActionEvent actionEvent) {
         try {
-            home = FXMLLoader.load(getClass().getResource("/xml/transaksi/ListTransaksi.fxml"));
+            home = FXMLLoader.load(getClass().getResource("/xml/transaksi/Transaksi.fxml"));
+            setNode(home);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void rentalHandler(ActionEvent actionEvent) {
+        try {
+            home = FXMLLoader.load(getClass().getResource("/xml/rental/RentalTransaksi.fxml"));
+            setNode(home);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void paketHandler(ActionEvent actionEvent) {
+        try {
+            home = FXMLLoader.load(getClass().getResource("/xml/paket/PaketTransaksi.fxml"));
+            setNode(home);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void sewaHandler(ActionEvent actionEvent) {
+        try {
+            home = FXMLLoader.load(getClass().getResource("/xml/sewa/SewaTransaksi.fxml"));
             setNode(home);
         } catch (IOException ex) {
             ex.printStackTrace();

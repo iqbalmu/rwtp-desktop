@@ -95,9 +95,9 @@ public class PaketController implements Initializable {
             paketDAO.addData(new Paket(noTransaksi, nopol, namaPengirim, hpPengirim, namaPenerima,hpPenerima, alamatPenerima, kuantitasTxt, bayar, "Dikirim", date));
         }
 
-//        back to AllTransaction;
+// 4. back to home
 //        Main main = new Main();
-//        main.changeScene("view/xml/main.fxml");
+//        main.changeScene("view/xml/paket/PaketTransaksi.fxml");
     }
 
     public ObservableList<Mobil> getMobil() {

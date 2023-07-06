@@ -9,12 +9,15 @@ public class Rental {
     private String id_pelanggan;
     private int id_user;
     private double bayar;
+
+    private double denda;
     private String nopol;
     private int lama_rental;
     private String keterangan;
     private String no_transaksi;
     private Timestamp date;
     private Date rental_date;
+    private Date actual_return;
 
     private Date return_date;
 
@@ -107,5 +110,21 @@ public class Rental {
 
     public void setReturn_date(Date return_date) {
         this.return_date = return_date;
+    }
+
+    public double getDenda() {
+        return denda;
+    }
+
+    public void setDenda(double denda) {
+        this.denda = denda;
+    }
+
+    public Date getActual_return() {
+        return actual_return;
+    }
+
+    public void setActual_return(Date actual_return) {
+        this.actual_return = actual_return;
     }
 }

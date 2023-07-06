@@ -1,6 +1,7 @@
 package app.controller.transaksi.rental;
 
 import app.Main;
+import app.controller.MainController;
 import app.dao.MobilDAO;
 import app.dao.PelangganDAO;
 import app.dao.RentalDAO;
@@ -152,9 +153,9 @@ public class RentalController implements Initializable {
         mobilDAO.updateStatus("Rental", nopol);
         System.out.println("update status oke");
 
-//        back to AllTransaction;
+       // 4. back to home
 //        Main main = new Main();
-//        main.changeScene("view/xml/main.fxml");
+//        main.changeScene("view/xml/rental/RentalTransaksi.fxml");
     }
 
     public void printHandler(ActionEvent actionEvent) {
