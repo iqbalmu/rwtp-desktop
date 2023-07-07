@@ -2,10 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="nota_paket" pageWidth="432" pageHeight="531" orientation="Landscape" columnWidth="392" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f6e4db4-9f8f-4ffe-9759-6e1fd142f492">
 	<property name="template.type" value="columnar"/>
-	<property name="com.jaspersoft.studio.data.sql.tables">
-		<![CDATA[ZGJfcnd0XzMucGFrZXQgLDE1LDE1LDY4OWMzMDdjLTlkZmUtNDllYy05NjkxLTkyMDkwZWI5MTQ3
-YTs=]]>
-	</property>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="479"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
@@ -41,7 +38,7 @@ YTs=]]>
 	kuantitas,
 	bayar,
 	date,
-	keterangan
+	status
 FROM db_rwt_3.paket
 WHERE 
 	 db_rwt_3.paket.no_transaksi = $P{noTransaksi}]]>
@@ -101,9 +98,9 @@ WHERE
 		<property name="com.jaspersoft.studio.field.label" value="date"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="paket"/>
 	</field>
-	<field name="keterangan" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="keterangan"/>
-		<property name="com.jaspersoft.studio.field.label" value="keterangan"/>
+	<field name="status" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="status"/>
+		<property name="com.jaspersoft.studio.field.label" value="status"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="paket"/>
 	</field>
 	<background>
@@ -289,7 +286,7 @@ Wisata Transport]]></text>
 				<textElement>
 					<font size="14" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{keterangan}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement style="Column header" positionType="Float" x="8" y="191" width="132" height="20" forecolor="#000000" uuid="d69652da-799c-48d4-a993-7be5bc0f3a06"/>

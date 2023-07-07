@@ -32,7 +32,7 @@
       <Label layoutX="350.0" layoutY="350.0" prefHeight="30.0" text="Mobil" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="350.0" />
       <TextField fx:id="txtNama" layoutX="195.0" layoutY="95.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="100.0" />
       <ComboBox fx:id="cbIdentitas" layoutX="195.0" layoutY="146.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="150.0" />
-      <TextField fx:id="txtIdentitas" layoutX="195.0" layoutY="206.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="200.0" />
+      <TextField fx:id="txtIdentitas" layoutX="195.0" layoutY="206.0" prefHeight="30.0" prefWidth="400.0" promptText="No NIK (16 digit)" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="200.0" />
       <TextField fx:id="txtLamaRental" layoutX="195.0" layoutY="286.0" prefHeight="30.0" prefWidth="400.0" promptText="Lama hari rental (contoh: 7)" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="300.0" />
       <ComboBox fx:id="cbClass" layoutX="195.0" layoutY="346.0" onAction="#selectClass" prefHeight="30.0" prefWidth="139.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="350.0" />
       <ComboBox fx:id="cbMobil" layoutX="396.0" layoutY="401.0" prefHeight="30.0" prefWidth="199.0" AnchorPane.leftAnchor="396.0" AnchorPane.topAnchor="350.0" />

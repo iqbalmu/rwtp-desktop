@@ -7,26 +7,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="app.controller.mobil.EditMobilController">
+<AnchorPane prefHeight="400.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.mobil.EditMobilController">
     <children>
         <Label layoutX="124.0" layoutY="28.0" text="Edit Data Mobil">
             <font>
-                <Font size="19.0"/>
+                <Font size="19.0" />
             </font>
         </Label>
-        <Label layoutX="76.0" layoutY="89.0" text="Nopol"/>
-        <Label layoutX="76.0" layoutY="128.0" text="Jenis"/>
-        <Label layoutX="76.0" layoutY="171.0" text="Kelas"/>
-        <Label layoutX="74.0" layoutY="257.0" text="Jadwal"/>
-        <Label layoutX="76.0" layoutY="214.0" text="Sopir"/>
-        <Label layoutX="74.0" layoutY="300.0" text="Status"/>
-        <TextField fx:id="txtNopol" layoutX="129.0" layoutY="84.0" prefWidth="220.0"/>
-        <ComboBox fx:id="cbJenis" layoutX="129.0" layoutY="124.0" prefWidth="220.0"/>
-        <ComboBox fx:id="cbKelas" layoutX="129.0" layoutY="167.0" prefWidth="220.0"/>
-        <ComboBox fx:id="cbJadwal" layoutX="127.0" layoutY="253.0" prefWidth="220.0"/>
-        <ComboBox fx:id="cbSopir" layoutX="129.0" layoutY="210.0" prefWidth="220.0"/>
-        <ComboBox fx:id="cbStatus" layoutX="127.0" layoutY="296.0" prefWidth="220.0"/>
-        <Button layoutX="161.0" layoutY="340.0" mnemonicParsing="false" onAction="#updateDataMobil" text="Simpan"/>
+        <Label layoutX="76.0" layoutY="89.0" text="Nopol" />
+        <Label layoutX="76.0" layoutY="128.0" text="Jenis" />
+        <Label layoutX="76.0" layoutY="171.0" text="Kelas" />
+        <Label layoutX="74.0" layoutY="257.0" text="Jadwal" />
+        <Label layoutX="76.0" layoutY="214.0" text="Sopir" />
+        <Label layoutX="74.0" layoutY="300.0" text="Status" />
+        <TextField fx:id="txtNopol" layoutX="129.0" layoutY="84.0" prefWidth="220.0" promptText="(contoh : BM 4565 LY)" />
+        <ComboBox fx:id="cbJenis" layoutX="129.0" layoutY="124.0" prefWidth="220.0" />
+        <ComboBox fx:id="cbKelas" layoutX="129.0" layoutY="167.0" prefWidth="220.0" />
+        <ComboBox fx:id="cbJadwal" layoutX="127.0" layoutY="253.0" prefWidth="220.0" />
+        <ComboBox fx:id="cbSopir" layoutX="129.0" layoutY="210.0" prefWidth="220.0" />
+        <ComboBox fx:id="cbStatus" layoutX="127.0" layoutY="296.0" prefWidth="220.0" />
+        <Button layoutX="161.0" layoutY="340.0" mnemonicParsing="false" onAction="#updateDataMobil" text="Simpan" />
     </children>
 </AnchorPane>

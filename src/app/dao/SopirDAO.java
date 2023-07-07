@@ -17,7 +17,7 @@ public class SopirDAO implements daoInterface<Sopir> {
     public int addData(Sopir data) {
         int result = 0;
         try {
-            String query = "INSERT INTO sopir(nama_sopir, phone, alamat, ktp, sim, status) VALUE (?,?,?,?,?,?)";
+            String query = "INSERT INTO sopir(nama_sopir, phone, alamat, ktp, sim, status, date) VALUE (?,?,?,?,?,?, now())";
             PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
             ps.setString(1, data.getNama());
             ps.setString(2, data.getPhone());

@@ -12,15 +12,16 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="inch"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="inch"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="inch"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="548"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="438"/>
 	<parameter name="noTransaksi" class="java.lang.String"/>
 	<queryString language="SQL">
-		<![CDATA[SELECT id_rental,no_transaksi, p.nama, p.id_pelanggan, rt.nopol, m.kelas, u.username , `date`, lama_rental, bayar, rental_date, return_date, keterangan
+		<![CDATA[SELECT id_rental,no_transaksi, p.nama, p.id_pelanggan, rt.nopol, m.kelas, u.username , rt.date, lama_rental, bayar, rental_date, return_date, keterangan
 FROM rental_transaksi rt 
 JOIN pelanggan p ON rt.id_pelanggan = p.id_pelanggan 
 JOIN `user` u ON rt.id_user = u.id_user
 JOIN mobil m ON rt.nopol = m.nopol
-WHERE no_transaksi = $P{noTransaksi}
-]]>
+WHERE no_transaksi = $P{noTransaksi}]]>
 	</queryString>
 	<field name="id_rental" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="id_rental"/>

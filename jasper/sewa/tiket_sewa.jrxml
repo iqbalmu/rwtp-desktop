@@ -7,7 +7,7 @@
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
 	<parameter name="noTransaksi" class="java.lang.String"/>
 	<queryString language="SQL">
-		<![CDATA[SELECT id_sewa,no_transaksi, st.id_pelanggan, sewa_date,tujuan,`date`,harga, jadwal,kursi, p.nama, p.no_telp, p.alamat, m.nopol, m.kelas, keterangan
+		<![CDATA[SELECT id_sewa,no_transaksi, st.id_pelanggan, sewa_date,tujuan,st.date,harga, st.jadwal,kursi, p.nama, p.no_telp, p.alamat, m.nopol, m.kelas, keterangan
 FROM db_rwt_3.sewa_transaksi st
 JOIN pelanggan p ON st.id_pelanggan = p.id_pelanggan
 JOIN mobil m ON m.nopol = st.nopol

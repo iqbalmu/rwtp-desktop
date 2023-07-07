@@ -19,7 +19,7 @@
       <Label layoutX="76.0" layoutY="171.0" text="Kelas" />
       <Label layoutX="76.0" layoutY="214.0" text="Sopir" />
       <Label layoutX="74.0" layoutY="293.0" text="Status" />
-      <TextField fx:id="txtNopol" layoutX="129.0" layoutY="84.0" prefWidth="220.0" />
+      <TextField fx:id="txtNopol" layoutX="129.0" layoutY="84.0" prefWidth="220.0" promptText="(contoh : L 4 S)" />
       <ComboBox fx:id="cbJenis" layoutX="129.0" layoutY="124.0" prefWidth="220.0" />
       <ComboBox fx:id="cbKelas" layoutX="129.0" layoutY="167.0" prefWidth="220.0" />
       <ComboBox fx:id="cbSopir" layoutX="129.0" layoutY="210.0" prefWidth="220.0" />

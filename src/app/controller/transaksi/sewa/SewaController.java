@@ -91,6 +91,7 @@ public class SewaController implements Initializable {
     }
 
     public void resetCbKursi() {
+        lCkursi.clear();
         ck1.setSelected(false);
         ck1.setDisable(false);
         ck2.setSelected(false);

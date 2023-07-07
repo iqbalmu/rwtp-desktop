@@ -5,9 +5,11 @@ import app.utility.JDBCConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 
 public class MobilDAO implements daoInterface<Mobil>{
@@ -16,7 +18,7 @@ public class MobilDAO implements daoInterface<Mobil>{
     public int addData(Mobil data) {
         int result = 0;
         try {
-            String query = "INSERT INTO mobil(nopol, jenis_mobil, kelas, jadwal, status, id_sopir) VALUE (?,?,?,?,?,?)";
+            String query = "INSERT INTO mobil(nopol, jenis_mobil, kelas, jadwal, status, id_sopir, date) VALUE (?,?,?,?,?,?,now())";
             PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
             ps.setString(1, data.getNopol());
             ps.setString(2, data.getJenis());

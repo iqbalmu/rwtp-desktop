@@ -35,11 +35,11 @@
         <Label layoutX="60.0" layoutY="373.0" prefHeight="30.0" text="Alamat / Tujuan" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="350.0" />
         <Label layoutX="60.0" layoutY="433.0" prefHeight="30.0" text="Kuantitias (Kg)" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="400.0" />
         <TextField fx:id="nama_pengirim" layoutX="195.0" layoutY="108.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="108.0" />
-        <TextField fx:id="hp_pengirim" layoutX="195.0" layoutY="168.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="155.0" />
+        <TextField fx:id="hp_pengirim" layoutX="195.0" layoutY="168.0" prefHeight="30.0" prefWidth="400.0" promptText="08..." AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="155.0" />
         <TextField fx:id="nama_penerima" layoutX="195.0" layoutY="253.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="250.0" />
-        <TextField fx:id="hp_penerima" layoutX="195.0" layoutY="313.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="300.0" />
+        <TextField fx:id="hp_penerima" layoutX="195.0" layoutY="313.0" prefHeight="30.0" prefWidth="400.0" promptText="08..." AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="300.0" />
         <TextField fx:id="alamat_penerima" layoutX="195.0" layoutY="373.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="350.0" />
-        <TextField fx:id="kuantitas" layoutX="195.0" layoutY="433.0" prefHeight="30.0" prefWidth="400.0" AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="400.0" />
+        <TextField fx:id="kuantitas" layoutX="195.0" layoutY="433.0" prefHeight="30.0" prefWidth="400.0" promptText="(contoh : 4) " AnchorPane.leftAnchor="195.0" AnchorPane.topAnchor="400.0" />
         <Button layoutX="605.0" layoutY="515.0" mnemonicParsing="false" onAction="#btnSaveHandler" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #3998F0; -fx-background-radius: 7;" text="Save" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="12.0" />

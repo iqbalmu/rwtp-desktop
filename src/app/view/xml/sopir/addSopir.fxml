@@ -16,9 +16,9 @@
       </Label>
       <TextField fx:id="txtName" layoutX="129.0" layoutY="84.0" prefWidth="220.0" />
       <TextField fx:id="txtAlamat" layoutX="129.0" layoutY="124.0" prefWidth="220.0" />
-      <TextField fx:id="txtPhone" layoutX="129.0" layoutY="167.0" prefWidth="220.0" />
-      <TextField fx:id="txtKtp" layoutX="129.0" layoutY="210.0" prefWidth="220.0" />
-      <TextField fx:id="txtSim" layoutX="129.0" layoutY="248.0" prefWidth="220.0" />
+      <TextField fx:id="txtPhone" layoutX="129.0" layoutY="167.0" prefWidth="220.0" promptText="08..." />
+      <TextField fx:id="txtKtp" layoutX="129.0" layoutY="210.0" prefWidth="220.0" promptText="No NIK (16 digit)" />
+      <TextField fx:id="txtSim" layoutX="129.0" layoutY="248.0" prefWidth="220.0" promptText="No SIM (14 digit)" />
       <ComboBox fx:id="cbStatus" layoutX="129.0" layoutY="291.0" prefHeight="26.0" prefWidth="220.0" />
       <Label layoutX="76.0" layoutY="88.0" text="Nama" />
       <Label layoutX="76.0" layoutY="128.0" text="Alamat" />
