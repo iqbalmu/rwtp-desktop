@@ -267,7 +267,7 @@ public class SewaController implements Initializable {
                 txtTujuan.getText(),
                 no_transaksi,
                 harga,
-                ""
+                "Perjalanan"
         );
         System.out.println(id_pelanggan);
         System.out.println(nopol);

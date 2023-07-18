@@ -88,7 +88,7 @@ WHERE
 		<property name="com.jaspersoft.studio.field.label" value="kuantitas"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="paket"/>
 	</field>
-	<field name="bayar" class="java.lang.Integer">
+	<field name="bayar" class="java.lang.Double">
 		<property name="com.jaspersoft.studio.field.name" value="bayar"/>
 		<property name="com.jaspersoft.studio.field.label" value="bayar"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="paket"/>

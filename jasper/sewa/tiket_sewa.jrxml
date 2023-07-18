@@ -7,7 +7,7 @@
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
 	<parameter name="noTransaksi" class="java.lang.String"/>
 	<queryString language="SQL">
-		<![CDATA[SELECT id_sewa,no_transaksi, st.id_pelanggan, sewa_date,tujuan,st.date,harga, st.jadwal,kursi, p.nama, p.no_telp, p.alamat, m.nopol, m.kelas, keterangan
+		<![CDATA[SELECT id_sewa,no_transaksi, st.id_pelanggan, sewa_date,tujuan,st.date,harga, st.jadwal,kursi, p.nama, p.no_telp, p.alamat, m.nopol, m.kelas, st.status
 FROM db_rwt_3.sewa_transaksi st
 JOIN pelanggan p ON st.id_pelanggan = p.id_pelanggan
 JOIN mobil m ON m.nopol = st.nopol
@@ -83,9 +83,9 @@ WHERE no_transaksi = $P{noTransaksi}]]>
 		<property name="com.jaspersoft.studio.field.label" value="kelas"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="mobil"/>
 	</field>
-	<field name="keterangan" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="keterangan"/>
-		<property name="com.jaspersoft.studio.field.label" value="keterangan"/>
+	<field name="status" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="status"/>
+		<property name="com.jaspersoft.studio.field.label" value="status"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="sewa_transaksi"/>
 	</field>
 	<background>

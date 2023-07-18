@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="161.0" prefWidth="471.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.sewa.SewaConfirmController">
+   <children>
+      <Label fx:id="txtPenerimaTelp" layoutX="28.0" layoutY="27.0" text="Update status sewa" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="27.0">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Button layoutX="476.0" layoutY="315.0" mnemonicParsing="false" onAction="#okeHandler" prefHeight="26.0" prefWidth="57.0" text="oke" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <Button layoutX="406.0" layoutY="315.0" mnemonicParsing="false" onAction="#cancelHandler" text="cancel" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="75.0" />
+      <Label fx:id="stat1" layoutX="188.0" layoutY="28.0" text="Sampai">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="69.0" text="menjadi">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="stat2" layoutX="99.0" layoutY="70.0" text="Perjalan">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="173.0" layoutY="69.0" text="?">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

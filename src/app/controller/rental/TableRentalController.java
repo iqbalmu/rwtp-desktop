@@ -60,6 +60,9 @@ public class TableRentalController implements Initializable {
         denda.setCellValueFactory(new PropertyValueFactory<Rental, Integer>("denda"));
         keterangan.setCellValueFactory(new PropertyValueFactory<Rental, String>("keterangan"));
 
+        MobilDAO mobilDAO = new MobilDAO();
+        mobilDAO.checkUpdateStatusRental("Rental");
+
         rentals = rentalDAO.showData();
         tableRental.setItems(rentals);
     }

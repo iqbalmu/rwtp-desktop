@@ -1,4 +1,4 @@
-package app.controller.laporan;
+package app.controller.report;
 
 import app.utility.JDBCConnection;
 import javafx.collections.FXCollections;
@@ -12,15 +12,13 @@ import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.view.JasperViewer;
 
 import java.net.URL;
-import java.sql.Date;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class LaporanController implements Initializable {
+public class ReportController implements Initializable {
 
     public DatePicker startDate;
     public DatePicker endDate;
@@ -33,7 +31,6 @@ public class LaporanController implements Initializable {
                 "Laporan Pengeluaran",
                 "Laporan Mobil",
                 "Laporan Sopir"
-
         );
 
         cbJenis.setItems(jenis);
@@ -53,7 +50,7 @@ public class LaporanController implements Initializable {
             // Fill Jasper Report with data
             Map<String, Object> parameters = new HashMap<>();
             // Set report parameters if needed
-            parameters.put("starDate", startDate);
+            parameters.put("startDate", startDate);
             parameters.put("endDate", endDate);
             // print report
             JasperPrint jasperPrint = JasperFillManager.fillReport(compiledReportFile, parameters, JDBCConnection.getConnection());
@@ -64,7 +61,6 @@ public class LaporanController implements Initializable {
         }catch (JRException e){
             e.printStackTrace();
         }
-
     }
 
     public void handlePrint(ActionEvent actionEvent) {
@@ -73,16 +69,28 @@ public class LaporanController implements Initializable {
         String jenis = cbJenis.getValue();
 
         if (Objects.equals(jenis, "Laporan Pemasukan")) {
-            jenis = "pemasukan";
+            jenis = "income";
+            System.out.println(jenis);
+            System.out.println(start);
+            System.out.println(end);
             jasperPrint(start, end, jenis);
         } else if (Objects.equals(jenis, "Laporan Pengeluaran")) {
             jenis = "pengeluaran";
+            System.out.println(jenis);
+            System.out.println(start);
+            System.out.println(end);
             jasperPrint(start, end, jenis);
         } else if (Objects.equals(jenis, "Laporan Mobil")) {
             jenis = "mobil";
+            System.out.println(jenis);
+            System.out.println(start);
+            System.out.println(end);
             jasperPrint(start, end, jenis);
         } else if (Objects.equals(jenis, "Laporan Sopir")) {
             jenis = "sopir";
+            System.out.println(jenis);
+            System.out.println(start);
+            System.out.println(end);
             jasperPrint(start, end, jenis);
         }
     }

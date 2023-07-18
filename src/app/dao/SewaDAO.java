@@ -18,12 +18,13 @@ public class SewaDAO implements daoInterface<Sewa> {
 
         try(Connection conn = JDBCConnection.getConnection()) {
 
-            try (PreparedStatement ps = conn.prepareStatement("INSERT INTO log_transaksi(no_transaksi) VALUE (?)")){
+            try (PreparedStatement ps = conn.prepareStatement("INSERT INTO log_transaksi(no_transaksi, jenis, biaya, `date`) VALUE (?, 'sewa', ?, now())")){
                 ps.setString(1, data.getNo_transaksi());
+                ps.setDouble(2, data.getHarga());
                 ps.executeUpdate();
             }
 
-            try(PreparedStatement ps = conn.prepareStatement("INSERT INTO sewa_transaksi(id_pelanggan, nopol, id_user, `date`, jadwal, kursi, tujuan, no_transaksi, harga, keterangan, sewa_date) " +
+            try(PreparedStatement ps = conn.prepareStatement("INSERT INTO sewa_transaksi(id_pelanggan, nopol, id_user, `date`, jadwal, kursi, tujuan, no_transaksi, harga, status, sewa_date) " +
                     "VALUE (?,?,?,?,?,?,?,?,?,?,?)")) {
                 ps.setString(1, data.getId_pelanggan());
                 ps.setString(2, data.getNopol());
@@ -82,7 +83,7 @@ public class SewaDAO implements daoInterface<Sewa> {
     public ObservableList<Sewa> showData() {
         ObservableList<Sewa> lSewa = FXCollections.observableArrayList();
         try{
-            String query = "SELECT `date`, no_transaksi, nopol,sewa_date, jadwal, kursi, tujuan, pelanggan.nama FROM sewa_transaksi st JOIN pelanggan ON st.id_pelanggan = pelanggan.id_pelanggan;";
+            String query = "SELECT `date`, no_transaksi, nopol,sewa_date, jadwal, kursi, tujuan,harga, pelanggan.nama, status FROM sewa_transaksi st JOIN pelanggan ON st.id_pelanggan = pelanggan.id_pelanggan;";
             PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
             ResultSet res = ps.executeQuery();
 
@@ -95,6 +96,8 @@ public class SewaDAO implements daoInterface<Sewa> {
                 String kursi = res.getString("kursi");
                 String tujuan = res.getString("tujuan");
                 Date sewa_date = res.getDate("sewa_date");
+                int harga = res.getInt("harga");
+                String status = res.getString("status");
 
                 Sewa sewa = new Sewa();
                 sewa.setDate(date);
@@ -105,6 +108,8 @@ public class SewaDAO implements daoInterface<Sewa> {
                 sewa.setKursi(kursi);
                 sewa.setTujuan(tujuan);
                 sewa.setSewa_date(sewa_date);
+                sewa.setHarga(harga);
+                sewa.setKeterangan(status);
 
                 lSewa.add(sewa);
             }
@@ -114,4 +119,21 @@ public class SewaDAO implements daoInterface<Sewa> {
         }
         return lSewa;
     }
+
+    public int updateStatus(String status, String noTrans){
+        int result = 0;
+
+        try{
+            String query = "UPDATE sewa_transaksi SET status=? WHERE no_transaksi=?";
+            PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
+            ps.setString(1, status);
+            ps.setString(2, noTrans);
+            result = ps.executeUpdate();
+        }catch (SQLException ex){
+            System.out.println(ex.getMessage());
+        }
+
+        return result;
+    }
+
 }

@@ -178,4 +178,27 @@ public class MobilDAO implements daoInterface<Mobil>{
 
         return result;
     }
+
+    public int checkUpdateStatusRental(String status){
+        int result = 0;
+
+        try{
+            String query = "UPDATE mobil m \n" +
+                    "JOIN rental_transaksi rt \n" +
+                    "ON m.nopol = rt.nopol \n" +
+                    "SET m.status =?\n" +
+                    "WHERE \n" +
+//                    "(DATE_ADD(NOW(), INTERVAL 3 day) BETWEEN rt.rental_date AND rt.return_date)\n" +
+                    "(NOW() BETWEEN rt.rental_date AND rt.return_date)\n" +
+                    "AND \n" +
+                    "(rt.actual_return IS NULL)";
+            PreparedStatement ps = JDBCConnection.getConnection().prepareStatement(query);
+            ps.setString(1, status);
+            result = ps.executeUpdate();
+        }catch (SQLException ex){
+            System.out.println(ex.getMessage());
+        }
+
+        return result;
+    }
 }

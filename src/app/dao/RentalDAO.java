@@ -15,8 +15,9 @@ public class RentalDAO implements daoInterface<Rental> {
 
         try(Connection conn = JDBCConnection.getConnection()) {
 
-            try (PreparedStatement ps = conn.prepareStatement("INSERT INTO log_transaksi(no_transaksi) VALUE (?)")){
+            try (PreparedStatement ps = conn.prepareStatement("INSERT INTO log_transaksi(no_transaksi, jenis, biaya, `date`) VALUE (?, 'rental', ?, now())")){
                 ps.setString(1, data.getNo_transaksi());
+                ps.setDouble(2, data.getBayar());
                 ps.executeUpdate();
             }
 

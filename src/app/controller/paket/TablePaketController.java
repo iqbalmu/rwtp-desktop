@@ -33,6 +33,7 @@ public class TablePaketController implements Initializable {
     public TableColumn<Paket, String> hpPenerima;
     public TableColumn<Paket, String> tujuan;
     public TableColumn<Paket, String> status;
+    public TableColumn<Paket, Integer> biaya;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -49,6 +50,7 @@ public class TablePaketController implements Initializable {
         hpPenerima.setCellValueFactory(new PropertyValueFactory<Paket, String>("hpPenerima"));
         tujuan.setCellValueFactory(new PropertyValueFactory<Paket, String>("tujuan"));
         status.setCellValueFactory(new PropertyValueFactory<Paket, String>("status"));
+        biaya.setCellValueFactory(new PropertyValueFactory<Paket, Integer>("bayar"));
 
         PaketDAO paketDAO = new PaketDAO();
         ObservableList<Paket> pakets = paketDAO.showData();

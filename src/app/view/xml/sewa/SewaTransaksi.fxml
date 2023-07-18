@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="contentPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.transaksi.sewa.TableSewaController">
+<AnchorPane fx:id="contentPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.sewa.TableSewaController">
    <children>
+      <Button fx:id="btnUpdateStat" layoutX="887.0" layoutY="57.0" mnemonicParsing="false" onAction="#handlerUpdateStat" style="-fx-background-color: #3998F0; -fx-background-radius: 5;" text="Update Status Sewa" textAlignment="RIGHT" textFill="WHITE" visible="false" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="47.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <padding>
+            <Insets bottom="10.0" left="30.0" right="15.0" top="10.0" />
+         </padding>
+      </Button>
       <Label layoutX="21.0" layoutY="19.0" text="Transaksi Sewa" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
          <font>
             <Font name="System Bold" size="26.0" />
@@ -21,14 +31,16 @@
       </Label>
       <TableView fx:id="tableSewa" layoutX="26.0" layoutY="124.0" prefHeight="575.0" prefWidth="1035.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="25.0">
          <columns>
-            <TableColumn fx:id="date" prefWidth="118.0" text="Date" />
-            <TableColumn fx:id="no_transaksi" prefWidth="138.0" text="No Transaksi" />
-            <TableColumn fx:id="nama_pelanggan" minWidth="0.0" prefWidth="182.0" text="Nama Pelanggan" />
-            <TableColumn fx:id="nopol" prefWidth="132.0" text="Nopol" />
-            <TableColumn fx:id="sewaDate" prefWidth="118.0" text="Tanggal Sewa" />
-            <TableColumn fx:id="jadwal" prefWidth="108.0" text="Jadwal" />
-            <TableColumn fx:id="kursi" prefWidth="126.0" text="Kursi" />
-            <TableColumn fx:id="tujuan" prefWidth="112.0" text="Tujuan" />
+            <TableColumn fx:id="date" prefWidth="96.0" text="Date" />
+            <TableColumn fx:id="no_transaksi" prefWidth="107.0" text="No Transaksi" />
+            <TableColumn fx:id="nama_pelanggan" minWidth="0.0" prefWidth="108.0" text="Pelanggan" />
+            <TableColumn fx:id="nopol" prefWidth="97.0" text="Nopol" />
+            <TableColumn fx:id="sewaDate" prefWidth="123.0" text="Tanggal Sewa" />
+            <TableColumn fx:id="jadwal" prefWidth="107.0" text="Jadwal" />
+            <TableColumn fx:id="kursi" prefWidth="96.0" text="Kursi" />
+            <TableColumn fx:id="tujuan" prefWidth="100.0" text="Tujuan" />
+            <TableColumn fx:id="biaya" prefWidth="177.0" text="Biaya" />
+            <TableColumn fx:id="status" minWidth="8.0" prefWidth="8.0" text="Status" visible="false" />
          </columns>
       </TableView>
    </children>

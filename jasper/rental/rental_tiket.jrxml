@@ -68,7 +68,7 @@ WHERE no_transaksi = $P{noTransaksi}]]>
 		<property name="com.jaspersoft.studio.field.label" value="lama_rental"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="rental_transaksi"/>
 	</field>
-	<field name="bayar" class="java.lang.Integer">
+	<field name="bayar" class="java.lang.Double">
 		<property name="com.jaspersoft.studio.field.name" value="bayar"/>
 		<property name="com.jaspersoft.studio.field.label" value="bayar"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="rental_transaksi"/>

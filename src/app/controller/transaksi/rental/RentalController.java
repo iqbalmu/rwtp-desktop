@@ -149,9 +149,9 @@ public class RentalController implements Initializable {
         System.out.println("store rental transaksi success");
 
 //        set status mobil beroperasi
-        MobilDAO mobilDAO = new MobilDAO();
-        mobilDAO.updateStatus("Rental", nopol);
-        System.out.println("update status oke");
+//        MobilDAO mobilDAO = new MobilDAO();
+//        mobilDAO.updateStatus("Rental", nopol);
+//        System.out.println("update status oke");
 
        // 4. back to home
 //        Main main = new Main();

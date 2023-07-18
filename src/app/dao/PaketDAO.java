@@ -13,8 +13,9 @@ public class PaketDAO implements daoInterface<Paket> {
         int result = 0;
         try(Connection conn = JDBCConnection.getConnection()){
 
-            try (PreparedStatement ps = conn.prepareStatement("INSERT INTO log_transaksi(no_transaksi) VALUE (?)")){
+            try (PreparedStatement ps = conn.prepareStatement("INSERT INTO log_transaksi(no_transaksi, jenis, biaya,`date`) VALUE (?, 'paket', ?, now())")){
                 ps.setString(1, data.getNoTransaksi());
+                ps.setDouble(2, data.getBayar());
                 ps.executeUpdate();
             }
 
@@ -69,6 +70,7 @@ public class PaketDAO implements daoInterface<Paket> {
                 String hpPenerima = res.getString("hp_penerima");
                 String tujuan = res.getString("tujuan");
                 String status = res.getString("status");
+                int bayar = res.getInt("bayar");
 
                 Paket paket = new Paket();
                 paket.setId(id);
@@ -80,6 +82,7 @@ public class PaketDAO implements daoInterface<Paket> {
                 paket.setHpPenerima(hpPenerima);
                 paket.setTujuan(tujuan);
                 paket.setStatus(status);
+                paket.setBayar(bayar);
                 pList.add(paket);
             }
 
